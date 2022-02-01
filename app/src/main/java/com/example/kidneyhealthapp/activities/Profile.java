@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kidneyhealthapp.R;
 import com.example.kidneyhealthapp.model.User;
-import com.example.kidneyhealthapp.utils.SharedPrefManager;
+import com.example.kidneyhealthapp.utils.DoctorPrefs;
 
 public class Profile extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class Profile extends AppCompatActivity {
         mPhoneTV = findViewById(R.id.phone_text_view);
         mAddressTV = findViewById(R.id.address_text_view);
 
-        User user = SharedPrefManager.getInstance(this).getUserData();
+        User user = DoctorPrefs.getInstance(this).getUserData();
 
         mFullNameTV.setText(user.getName());
         mUserNameTV.setText(user.getUserName());
@@ -52,7 +52,7 @@ public class Profile extends AppCompatActivity {
     }
 
     public void logOut(){
-        SharedPrefManager.getInstance(this).logout();
+        DoctorPrefs.getInstance(this).logout();
         PackageManager packageManager = this.getPackageManager();
         Intent intent = packageManager.getLaunchIntentForPackage(this.getPackageName());
         ComponentName componentName = intent.getComponent();

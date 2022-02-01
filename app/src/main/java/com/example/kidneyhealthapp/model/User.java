@@ -9,26 +9,42 @@ public class User {
     private String firstName;
     private String lastName;
     private String userName;
-    private String password;
     private String phone;
     private int age;
-    private boolean gender;
-    private String location;
+    private int gender;
+    private LatLon location;
 
     private ArrayList<PatientInfo> medicinesList;
 
-    public User(int id, String firstName, String lastName, String userName, String password, String phone, int age, boolean gender, String location, ArrayList<PatientInfo> medicinesList) {
+    public User(int id, String firstName, String lastName, String userName, String phone, int age, int gender, LatLon location, ArrayList<PatientInfo> medicinesList) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.password = password;
         this.phone = phone;
         this.age = age;
         this.gender = gender;
         this.location = location;
 
         this.medicinesList = medicinesList;
+    }
+
+    public User(int id, String firstName, String lastName, String userName, String phone, int age, int gender) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.phone = phone;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
     }
 
     public int getId() {
@@ -47,10 +63,6 @@ public class User {
         return userName;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -59,11 +71,9 @@ public class User {
         return age;
     }
 
-    public boolean isGender() {
-        return gender;
-    }
 
-    public String getLocation() {
+
+    public LatLon getLocation() {
         return location;
     }
 
@@ -91,10 +101,6 @@ public class User {
         this.userName = userName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -103,11 +109,9 @@ public class User {
         this.age = age;
     }
 
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
 
-    public void setLocation(String location) {
+
+    public void setLocation(LatLon location) {
         this.location = location;
     }
 }
