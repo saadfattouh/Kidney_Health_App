@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/bg_login"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
@@ -18,18 +18,30 @@
         android:paddingRight="20dp" >
 
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/first_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="@string/hint_name"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_first_name"
             android:padding="10dp"
             android:singleLine="true"
             android:inputType="textCapWords"
-            android:background="@color/white"
+            android:background="@drawable/bg_et_input"
             android:textColor="@color/input_login"
             android:textColorHint="@color/input_login_hint"/>
-
+        <EditText
+            android:id="@+id/last_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hint_last_name"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:inputType="textCapWords"
+            android:background="@drawable/bg_et_input"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"/>
         <EditText
             android:id="@+id/email"
             android:layout_width="fill_parent"
@@ -39,7 +51,7 @@
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
-            android:background="@color/white"
+            android:background="@drawable/bg_et_input"
             android:textColor="@color/input_login"
             android:textColorHint="@color/input_login_hint" />
 
@@ -53,10 +65,49 @@
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
-            android:background="@color/white"
+            android:background="@drawable/bg_et_input"
             android:textColor="@color/input_login"
             android:textColorHint="@color/input_login_hint" />
+        <RadioGroup
+            android:id="@+id/type_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
 
+            >
+            <RadioButton
+                android:id="@+id/main_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white"
+                android:text="@string/male"/>
+            <RadioButton
+                android:id="@+id/donor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white"
+                android:text="@string/female"/>
+
+
+        </RadioGroup>
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hint_age"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:background="@drawable/bg_et_input"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint" />
         <EditText
             android:id="@+id/phone"
             android:layout_width="fill_parent"
@@ -66,7 +117,7 @@
             android:inputType="phone"
             android:padding="10dp"
             android:singleLine="true"
-            android:background="@color/white"
+            android:background="@drawable/bg_et_input"
             android:textColor="@color/input_login"
             android:textColorHint="@color/input_login_hint" />
 
@@ -79,54 +130,25 @@
             android:inputType="textPostalAddress"
             android:padding="10dp"
             android:singleLine="true"
-            android:background="@color/white"
+            android:background="@drawable/bg_et_input"
             android:textColor="@color/input_login"
             android:textColorHint="@color/input_login_hint" />
 
-        <RadioGroup
-            android:id="@+id/type_selector"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:padding="8dp"
-            android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/main_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:text="@string/main_user"/>
-            <RadioButton
-                android:id="@+id/donor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:text="@string/donor"/>
-            <RadioButton
-                android:id="@+id/volunteer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:text="@string/volunteer"/>
-
-        </RadioGroup>
 
         <!-- Login Button -->
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
             android:text="@string/register"
-            android:background="@color/btn_login_bg"
-            android:textColor="@color/btn_login"/>
+            android:background="@drawable/bg_login_btn"
+            android:textColor="@color/black"
+            android:fontFamily="serif-monospace"
+            android:textStyle="bold"/>
         
 
 

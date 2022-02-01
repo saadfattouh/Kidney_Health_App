@@ -1,22 +1,18 @@
 <resources>
     <string name="app_name">Kidney Health App</string>
 
-    <string name="app_name">Sanabel Al-Khayr</string>
-    <string name="hint_user_name">User name</string>
-    <string name="hint_password">Password</string>
+    <string name="hint_user_name">user name</string>
+    <string name="hint_password">password</string>
     <string name="btn_login">Login</string>
     <string name="btn_link_to_register">Not a member? Sign up now.</string>
     <string name="user_and_password_required">user name and password must not be empty!</string>
-    <string name="hint_name">full name</string>
     <string name="register">Register</string>
-    <string name="btn_link_to_login">Already registred! Login Me.</string>
-    <string name="hint_phone">Phone</string>
-    <string name="hint_address">Address</string>
+    <string name="btn_link_to_login">Already registered! Login.</string>
+    <string name="hint_phone">phone</string>
+    <string name="hint_address">address</string>
 
-    <string name="user_type">user type</string>
-    <string name="main_user">Main User</string>
-    <string name="donor">Donor</string>
-    <string name="volunteer">Volunteer</string>
+    <string name="user_type">User Type</string>
+
 
     <string name="phone_missing_message">please enter your phone number!</string>
     <string name="password_missing_message">please enter your password!</string>
@@ -68,6 +64,12 @@
 
     <string name="start_at">start at</string>
     <string name="end_at">end at</string>
+    <string name="hint_last_name">last name</string>
+    <string name="hint_first_name">first name</string>
+    <string name="patient">Patient</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="hint_age">age</string>
 
 
 </resources>
