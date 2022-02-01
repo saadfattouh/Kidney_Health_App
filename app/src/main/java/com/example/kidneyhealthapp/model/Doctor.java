@@ -6,17 +6,15 @@ public class Doctor {
     private  String firstName;
     private String lastName;
     private String userName;
-    private String password;
     private String phone;
     private String about;
 
-    public Doctor(int id, int centerId, String firstName, String lastName, String userName, String password, String phone, String about) {
+    public Doctor(int id, int centerId, String firstName, String lastName, String userName, String phone, String about) {
         this.id = id;
         this.centerId = centerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.password = password;
         this.phone = phone;
         this.about = about;
     }
@@ -41,9 +39,6 @@ public class Doctor {
         return userName;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
     public String getPhone() {
         return phone;
@@ -73,9 +68,6 @@ public class Doctor {
         this.userName = userName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public void setPhone(String phone) {
         this.phone = phone;

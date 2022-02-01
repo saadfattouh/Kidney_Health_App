@@ -14,8 +14,8 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.example.sanabelalkhayr.R;
-import com.example.sanabelalkhayr.api.Urls;
+import com.example.kidneyhealthapp.R;
+import com.example.kidneyhealthapp.api.Urls;
 
 import org.json.JSONException;
 import org.json.JSONObject;
