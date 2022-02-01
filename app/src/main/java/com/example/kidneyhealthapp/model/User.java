@@ -1,36 +1,46 @@
 package com.example.kidneyhealthapp.model;
 
+import java.util.ArrayList;
+
 public class User {
 
     //all users have:
     private int id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String userName;
     private String password;
     private String phone;
-    private String address;
-    private int type;
+    private int age;
+    private boolean gender;
+    private String location;
 
-    public User(int id, String name, String userName,  String password, String phone, String address, int type) {
+    private ArrayList<PatientInfo> medicinesList;
+
+    public User(int id, String firstName, String lastName, String userName, String password, String phone, int age, boolean gender, String location, ArrayList<PatientInfo> medicinesList) {
         this.id = id;
-        this.name = name;
-        this.phone = phone;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.userName = userName;
         this.password = password;
-        this.address = address;
-        this.type = type;
+        this.phone = phone;
+        this.age = age;
+        this.gender = gender;
+        this.location = location;
+
+        this.medicinesList = medicinesList;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getUserName() {
@@ -41,24 +51,40 @@ public class User {
         return password;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPhone() {
+        return phone;
     }
 
-    public int getType() {
-        return type;
+    public int getAge() {
+        return age;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setMedicinesList(ArrayList<PatientInfo> medicinesList) {
+        this.medicinesList = medicinesList;
+    }
+
+    public ArrayList<PatientInfo> getMedicinesList() {
+        return medicinesList;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setUserName(String userName) {
@@ -69,11 +95,19 @@ public class User {
         this.password = password;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
