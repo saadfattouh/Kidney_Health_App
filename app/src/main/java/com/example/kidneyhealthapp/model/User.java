@@ -14,7 +14,6 @@ public class User {
     private int gender;
     private LatLon location;
 
-    private ArrayList<PatientInfo> medicinesList;
 
     public User(int id, String firstName, String lastName, String userName, String phone, int age, int gender, LatLon location, ArrayList<PatientInfo> medicinesList) {
         this.id = id;
@@ -25,8 +24,6 @@ public class User {
         this.age = age;
         this.gender = gender;
         this.location = location;
-
-        this.medicinesList = medicinesList;
     }
 
     public User(int id, String firstName, String lastName, String userName, String phone, int age, int gender) {
@@ -83,14 +80,6 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public void setMedicinesList(ArrayList<PatientInfo> medicinesList) {
-        this.medicinesList = medicinesList;
-    }
-
-    public ArrayList<PatientInfo> getMedicinesList() {
-        return medicinesList;
     }
 
     public void setLastName(String lastName) {

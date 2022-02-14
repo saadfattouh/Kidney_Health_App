@@ -2,16 +2,19 @@ package com.example.kidneyhealthapp.model;
 
 public class Appointment {
     private int id;
-    private int doctorId;
+    private String doctorName;
+    private String centerName;
     private int patientId;
     private String date;
-    private boolean status;
+    private int status;
     private String resultInfo;
     private String patientStatus;
 
-    public Appointment(int id, int doctorId, int patientId, String date, boolean status, String resultInfo, String patientStatus) {
+
+    public Appointment(int id, String doctorName, String centerName, int patientId, String date, int status, String resultInfo, String patientStatus) {
         this.id = id;
-        this.doctorId = doctorId;
+        this.doctorName = doctorName;
+        this.centerName = centerName;
         this.patientId = patientId;
         this.date = date;
         this.status = status;
@@ -19,12 +22,16 @@ public class Appointment {
         this.patientStatus = patientStatus;
     }
 
-    public int getId() {
-        return id;
+    public String getDoctorName() {
+        return doctorName;
     }
 
-    public int getDoctorId() {
-        return doctorId;
+    public String getCenterName() {
+        return centerName;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getPatientId() {
@@ -35,7 +42,7 @@ public class Appointment {
         return date;
     }
 
-    public boolean isStatus() {
+    public int getStatus() {
         return status;
     }
 
@@ -51,10 +58,6 @@ public class Appointment {
         this.id = id;
     }
 
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
-    }
-
     public void setPatientId(int patientId) {
         this.patientId = patientId;
     }
@@ -63,7 +66,7 @@ public class Appointment {
         this.date = date;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

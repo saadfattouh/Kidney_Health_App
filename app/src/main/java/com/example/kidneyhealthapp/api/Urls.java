@@ -13,7 +13,7 @@ public class Urls {
 
     public static final String GET_CENTERS = "";
     public static final String SEND_APPOINTMENT_REQUEST = "";
-    public static final String GET_APPOINTMENT_REQUESTS = "";
+    public static final String GET_MY_APPOINTMENT = "";
     public static final String GET_PATIENTS_LIST = "";
 
 

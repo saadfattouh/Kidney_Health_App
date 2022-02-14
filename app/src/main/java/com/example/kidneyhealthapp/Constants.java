@@ -10,6 +10,10 @@ public class Constants {
 
     public static final int MALE = 0;
     public static final int FEMALE = 1;
+    public static final String APPOINTMENT_PROCESSING = "processing";
+    public static final String APPOINTMENT_REJECTED = "rejected";
+    public static final String APPOINTMENT_APPROVED = "approved";
+
 
 
 
