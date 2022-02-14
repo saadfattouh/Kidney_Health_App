@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph_donor">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_doctor"
+    app:startDestination="@id/menu_appointment_requests">
 
+    <fragment
+        android:id="@+id/menu_appointment_requests"
+        android:name="com.example.kidneyhealthapp.fragments.doctor.AppointmentRequestsFragment"
+        android:label="@string/appointment_requests"
+        tools:layout="@layout/fragment_my_appointments" />
+    <fragment
+        android:id="@+id/menu_patients"
+        android:name="com.example.kidneyhealthapp.fragments.doctor.PatientsFragment"
+        android:label="@string/patients"
+        tools:layout="@layout/fragment_patients" />
+
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="com.example.kidneyhealthapp.fragments.doctor.DoctorProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile_doctor">
+        <action
+            android:id="@+id/action_doctorsChatList_to_chattingFragment"
+            app:destination="@id/chattingFragment"
+            app:popUpTo="@id/doctorsChatList" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_my_center"
+        android:name="com.example.kidneyhealthapp.fragments.doctor.MyCenterFragment"
+        android:label="@string/my_center"
+        tools:layout="@layout/fragment_my_center" />
 </navigation>

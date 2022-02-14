@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/donation_bg"
-    tools:context=".activities.PatientMain"
+    tools:context=".activities.DoctorMain"
     tools:ignore="HardcodedText">
 
     <LinearLayout
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph_patient" />
+            app:navGraph="@navigation/nav_graph_doctor" />
 
     </LinearLayout>
 
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/patient_nav_menu"
+        app:menu="@menu/doctor_nav_menu"
         app:headerLayout="@layout/nav_header"
         >
 

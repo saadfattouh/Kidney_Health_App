@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 import com.androidnetworking.AndroidNetworking;
@@ -70,6 +71,29 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
                 holder.statusTV.setTextColor(0xff0000ff);
 
             }
+
+            holder.itemView.setOnClickListener(v -> {
+                LayoutInflater factory = LayoutInflater.from(context);
+                final View view = factory.inflate(R.layout.dialog_my_appointment_info, null);
+                final AlertDialog centerInfoDialog = new AlertDialog.Builder(context).create();
+                centerInfoDialog.setView(view);
+
+                TextView ok = view.findViewById(R.id.ok);
+                TextView patientStatus = view.findViewById(R.id.patient_status);
+                TextView result = view.findViewById(R.id.result);
+
+                patientStatus.setText(appointment.getPatientStatus());
+                result.setText(appointment.getResultInfo());
+
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        centerInfoDialog.dismiss();
+                    }
+                });
+
+                centerInfoDialog.show();
+            });
 
         }
 

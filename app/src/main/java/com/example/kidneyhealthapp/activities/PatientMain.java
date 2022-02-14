@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.kidneyhealthapp.R;
@@ -105,6 +106,11 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
 
             case R.id.menu_doctors:
                 destination = R.id.doctorsChatList;
+                break;
+            case R.id.menu_logout:
+                SharedPrefManager.getInstance(this).logout();
+                startActivity( new Intent(this, Login.class));
+                finish();
                 break;
 
         }

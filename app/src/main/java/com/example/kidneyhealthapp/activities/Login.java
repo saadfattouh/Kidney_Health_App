@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.example.kidneyhealthapp.Constants;
 import com.example.kidneyhealthapp.R;
 import com.example.kidneyhealthapp.api.Urls;
 import com.example.kidneyhealthapp.utils.Validation;
@@ -32,6 +34,9 @@ public class Login extends AppCompatActivity {
     private EditText mPassET;
     private ProgressDialog pDialog;
 
+    RadioGroup mAccountTypeSelector;
+    int selectedUserType = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,10 @@ public class Login extends AppCompatActivity {
         mLoginBtn =  findViewById(R.id.btnLogin);
         mToRegisterBtn = findViewById(R.id.btnLinkToRegisterScreen);
 
+        mAccountTypeSelector = findViewById(R.id.type_selector);
+        selectedUserType = Constants.USER_TYPE_PATIENT;
+        mAccountTypeSelector.check(R.id.patient);
+
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -51,13 +60,32 @@ public class Login extends AppCompatActivity {
 
             public void onClick(View view) {
                 if(Validation.validateInput(Login.this, mUserNameET, mPassET)) {
-                    startActivity(new Intent(Login.this, PatientMain.class));
-                    finish();
+                    switch (selectedUserType){
+                        case Constants.USER_TYPE_PATIENT:
+                            startActivity(new Intent(Login.this, PatientMain.class));
+                            finish();
+                            break;
+                        case Constants.USER_TYPE_DOCTOR:
+                            startActivity(new Intent(Login.this, DoctorMain.class));
+                            finish();
+                            break;
+
+                    }
+
                 }
             }
         });
 
-
+        mAccountTypeSelector.setOnCheckedChangeListener((group, checkedId) -> {
+            switch (checkedId){
+                case R.id.doctor:
+                    selectedUserType = Constants.USER_TYPE_DOCTOR;
+                    break;
+                case R.id.patient:
+                    selectedUserType = Constants.USER_TYPE_PATIENT;
+                    break;
+            }
+        });
         // Link to Register Screen
         mToRegisterBtn.setOnClickListener(new View.OnClickListener() {
 

@@ -45,8 +45,19 @@
     <string name="ok">Ok</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="result">Result :</string>
+    <string name="patient_status">Patient Status :</string>
+    <string name="appointment_requests">Appointment Requests</string>
+    <string name="patients">Patients</string>
+    <string name="my_center">My center</string>
+    <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
     <string name="place_holder">Send a message</string>
     <string name="view_doctor_instructions">View doctor instructions</string>
+    <string name="doctor">Doctor</string>
+    <string name="patient_name">Patient name</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
 
 
 </resources>

@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_appointment_requests"
+            android:icon="@drawable/hospital"
+            android:title="@string/appointment_requests"
+            android:actionLayout="@layout/fragment_appointment_requests"
+            />
+
+        <item
+            android:id="@+id/menu_patients"
+            android:icon="@drawable/ic_people"
+            android:title="@string/patients"
+            android:actionLayout="@layout/fragment_patients"
+            />
+        <item
+            android:id="@+id/menu_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/daily_info"
+            android:actionLayout="@layout/fragment_profile_doctor"
+            />
+        <item
+            android:id="@+id/menu_my_center"
+            android:icon="@drawable/hospital"
+            android:title="@string/my_center"
+            android:actionLayout="@layout/fragment_my_center"
+            />
+
+        <item
+            android:id="@+id/menu_chat"
+            android:icon="@drawable/ic_chat"
+            android:title="@string/chat"
+            android:actionLayout="@layout/fragment_doctors_chat_list"
+            />
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/logout"
+            />
 
 
+    </group>
 
 </menu>
