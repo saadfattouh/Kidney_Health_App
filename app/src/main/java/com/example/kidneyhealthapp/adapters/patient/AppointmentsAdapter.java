@@ -30,7 +30,7 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
         private List<Appointment> appointments;
         public NavController navController;
 
-        com.example.kidneyhealthapp.adapters.patient.DialysisCentersAdapter.OnAppointmentSelected mSelectionListener;
+        com.example.kidneyhealthapp.adapters.patient.AppointmentsAdapter.OnAppointmentSelected mSelectionListener;
 
 
         // RecyclerView recyclerView;
@@ -51,8 +51,8 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
 
     @Override
         public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-            if(context instanceof com.example.kidneyhealthapp.adapters.patient.DialysisCentersAdapter.OnAppointmentSelected){
-                mSelectionListener = (com.example.kidneyhealthapp.adapters.patient.DialysisCentersAdapter.OnAppointmentSelected) context;
+            if(context instanceof com.example.kidneyhealthapp.adapters.patient.AppointmentsAdapter.OnAppointmentSelected){
+                mSelectionListener = (com.example.kidneyhealthapp.adapters.patient.AppointmentsAdapter.OnAppointmentSelected) context;
             }
         }
 
