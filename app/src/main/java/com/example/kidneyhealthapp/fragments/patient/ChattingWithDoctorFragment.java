@@ -1,17 +1,21 @@
 package com.example.kidneyhealthapp.fragments.patient;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidnetworking.AndroidNetworking;
@@ -46,10 +50,21 @@ public class ChattingWithDoctorFragment extends Fragment {
     private String from_id;
     private String from_user_name;
 
+    TextView inst_btn;
+
+    Context context;
+
+    NavController navController;
+
     public ChattingWithDoctorFragment() {
 
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +89,9 @@ public class ChattingWithDoctorFragment extends Fragment {
         mMessagesList = view.findViewById(R.id.messages_list);
         messageET = view.findViewById(R.id.message_edit_text);
         sendBtn = view.findViewById(R.id.send_btn);
+        inst_btn = view.findViewById(R.id.inst_btn);
+
+        navController = Navigation.findNavController(view);
 
 
         sendBtn.setOnClickListener(v -> {
@@ -102,6 +120,13 @@ public class ChattingWithDoctorFragment extends Fragment {
         mMessagesList.setAdapter(messagesAdapter);
 
 //        getAllMessages();
+
+        inst_btn.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("doctor_id", from_id);
+            navController.navigate(R.id.action_chattingFragment_to_doctorInstructionsFragment, bundle);
+
+        });
 
 
     }

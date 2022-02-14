@@ -30,5 +30,15 @@
         android:id="@+id/chattingFragment"
         android:name="com.example.kidneyhealthapp.fragments.patient.ChattingWithDoctorFragment"
         android:label="fragment_chatting"
-        tools:layout="@layout/fragment_chatting" />
+        tools:layout="@layout/fragment_chatting" >
+        <action
+            android:id="@+id/action_chattingFragment_to_doctorInstructionsFragment"
+            app:destination="@id/doctorInstructionsFragment"
+            app:popUpTo="@id/chattingFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/doctorInstructionsFragment"
+        android:name="com.example.kidneyhealthapp.fragments.patient.DoctorInstructionsFragment"
+        android:label="fragment_doctor_instructions"
+        tools:layout="@layout/fragment_doctor_instructions" />
 </navigation>

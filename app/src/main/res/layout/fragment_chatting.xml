@@ -5,18 +5,26 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".chat.ChattingFragment"
-    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
 
-    >
-
+    <TextView
+        android:id="@+id/inst_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@color/design_default_color_secondary"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:text="@string/view_doctor_instructions"/>
 <!--    messages container-->
     <FrameLayout
         android:id="@+id/chat_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/inst_btn"
         android:layout_above="@id/edit_text_layout"
-        android:layout_margin="20dp"
         android:background="@color/colorAccent">
 
         <androidx.core.widget.NestedScrollView

@@ -30,7 +30,6 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
         private List<Appointment> appointments;
         public NavController navController;
 
-        com.example.kidneyhealthapp.adapters.patient.AppointmentsAdapter.OnAppointmentSelected mSelectionListener;
 
 
         // RecyclerView recyclerView;
@@ -49,18 +48,7 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
             return viewHolder;
         }
 
-    @Override
-        public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-            if(context instanceof com.example.kidneyhealthapp.adapters.patient.AppointmentsAdapter.OnAppointmentSelected){
-                mSelectionListener = (com.example.kidneyhealthapp.adapters.patient.AppointmentsAdapter.OnAppointmentSelected) context;
-            }
-        }
 
-        @Override
-        public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
-            mSelectionListener = null;
-            super.onDetachedFromRecyclerView(recyclerView);
-        }
 
         @Override
         public void onBindViewHolder(@NonNull AppointmentsAdapter.ViewHolder holder, int position) {
@@ -107,46 +95,7 @@ public class AppointmentsAdapter extends RecyclerView.Adapter<AppointmentsAdapte
             }
         }
 
-        public interface OnAppointmentSelected{
-            void onAppointmentSelected(String desc);
-        }
 
-        private void getMyAppointments() {
-
-            int userId = SharedPrefManager.getInstance(context).getUserId();
-            final ProgressDialog pDialog = new ProgressDialog(context);
-            pDialog.setMessage("Processing Please wait...");
-            pDialog.show();
-            String url = Urls.GET_MY_APPOINTMENT;
-            AndroidNetworking.post(url)
-                    .addBodyParameter("user_id", String.valueOf(userId))
-                    .setPriority(Priority.MEDIUM)
-                    .build()
-                    .getAsJSONObject(new JSONObjectRequestListener() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            // do anything with response
-                            pDialog.dismiss();
-                            try {
-                                //converting response to json object
-                                JSONObject obj = response;
-                                //if no error in response
-                                if (obj.getInt("status") == 1) {
-                                    Toast.makeText(context, obj.getString("message"), Toast.LENGTH_SHORT).show();
-                                } else if(obj.getInt("status") == -1){
-                                    Toast.makeText(context, obj.getString("message"), Toast.LENGTH_SHORT).show();
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        @Override
-                        public void onError(ANError anError) {
-                            pDialog.dismiss();
-                            Toast.makeText(context, anError.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
 
 
     }

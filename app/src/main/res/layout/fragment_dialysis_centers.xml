@@ -35,9 +35,7 @@
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:queryHint="@string/search_center"
-                app:searchIcon="@drawable/ic_search"
-
-                />
+                app:searchIcon="@drawable/ic_search" />
 
             <RelativeLayout
                 android:layout_width="match_parent"

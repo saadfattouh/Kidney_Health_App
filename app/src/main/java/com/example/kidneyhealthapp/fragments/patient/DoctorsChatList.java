@@ -60,14 +60,17 @@ public class DoctorsChatList extends Fragment {
 
         chats = new ArrayList<Chat>()
         {{
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+            add(new Chat("Doctor 1", "1"));
+
         }};
 
         chatListAdapter = new ChatListAdapter(getContext(), chats);
