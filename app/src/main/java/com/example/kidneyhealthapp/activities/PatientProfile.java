@@ -10,12 +10,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kidneyhealthapp.R;
-import com.example.kidneyhealthapp.model.Doctor;
 import com.example.kidneyhealthapp.model.User;
-import com.example.kidneyhealthapp.utils.DoctorPrefs;
 import com.example.kidneyhealthapp.utils.SharedPrefManager;
 
-public class Profile extends AppCompatActivity {
+public class PatientProfile extends AppCompatActivity {
 
     Button mLogoutBtn;
 
@@ -28,7 +26,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_profile_patient);
 
 
 
@@ -39,7 +37,6 @@ public class Profile extends AppCompatActivity {
         mPhoneTV = findViewById(R.id.phone_tv);
         mAddressTV = findViewById(R.id.address_tv);
 
-        Doctor doctor = DoctorPrefs.getInstance(this).getUserData();
         User user = SharedPrefManager.getInstance(this).getUserData();
 
         mFullNameTV.setText(user.getFirstName() + " " +user.getLastName());
@@ -55,14 +52,7 @@ public class Profile extends AppCompatActivity {
     }
 
     public void logOut(){
-        if(DoctorPrefs.getInstance(this) != null){
-            DoctorPrefs.getInstance(this).logout();
-        }else{
-            SharedPrefManager.getInstance(this).logout();
-
-        }
-
-
+        SharedPrefManager.getInstance(this).logout();
         PackageManager packageManager = this.getPackageManager();
         Intent intent = packageManager.getLaunchIntentForPackage(this.getPackageName());
         ComponentName componentName = intent.getComponent();

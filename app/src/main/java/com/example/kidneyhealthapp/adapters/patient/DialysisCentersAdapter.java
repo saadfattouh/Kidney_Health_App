@@ -2,7 +2,6 @@ package com.example.kidneyhealthapp.adapters.patient;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +20,8 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.kidneyhealthapp.R;
 import com.example.kidneyhealthapp.model.Center;
+import com.example.kidneyhealthapp.model.LatLon;
+import com.example.kidneyhealthapp.utils.GPSTools;
 import com.example.kidneyhealthapp.utils.SharedPrefManager;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,17 +33,17 @@ public class DialysisCentersAdapter extends RecyclerView.Adapter<DialysisCenters
     Context context;
     private List<Center> centers;
     public NavController navController;
-    private boolean selectable;
-    OnDonationSelected mSelectionListener;
-
     private List<Center> centersFiltered;
+    private SharedPrefManager prefManager;
+    private int patientId;
 
     // RecyclerView recyclerView;
-    public DialysisCentersAdapter(Context context, ArrayList<Center> centers, boolean selectable) {
+    public DialysisCentersAdapter(Context context, ArrayList<Center> centers) {
         this.context = context;
         this.centers = centers;
         this.centersFiltered = centers;
-        this.selectable = selectable;
+        prefManager = SharedPrefManager.getInstance(context);
+        patientId = prefManager.getUserId();
     }
 
     @NonNull
@@ -50,22 +51,8 @@ public class DialysisCentersAdapter extends RecyclerView.Adapter<DialysisCenters
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem= layoutInflater.inflate(R.layout.item_center, parent, false);
-        ViewHolder viewHolder = new ViewHolder(listItem);
 
-        return viewHolder;
-    }
-
-    @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        if(context instanceof DialysisCentersAdapter.OnDonationSelected){
-            mSelectionListener = (DialysisCentersAdapter.OnDonationSelected) context;
-        }
-    }
-
-    @Override
-    public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
-        mSelectionListener = null;
-        super.onDetachedFromRecyclerView(recyclerView);
+        return new ViewHolder(listItem);
     }
 
     @Override
@@ -77,31 +64,64 @@ public class DialysisCentersAdapter extends RecyclerView.Adapter<DialysisCenters
 
         holder.doctorNameTV.setText(center.getDoctorName());
 
-        holder.locationTV.setText(String.valueOf(center.getLat()) + String.valueOf(center.getLon()));
+        LatLon patientLocation = prefManager.getUserLocation();
 
+        double distance = GPSTools.distance(center.getLat(), patientLocation.getLat(), center.getLon(), patientLocation.getLon());
 
-            holder.makeAppointmentBtn.setOnClickListener(v -> {
-                LayoutInflater factory = LayoutInflater.from(context);
-                final View view = factory.inflate(R.layout.dialog_confirm_appointment, null);
-                final AlertDialog appointmentConfirmationDialog = new AlertDialog.Builder(context).create();
-                appointmentConfirmationDialog.setView(view);
+        holder.distanceTV.setText(String.valueOf(distance));
 
-                TextView yes = view.findViewById(R.id.yes_btn);
-                TextView no = view.findViewById(R.id.no_btn);
+        holder.itemView.setOnClickListener(v -> {
+            LayoutInflater factory = LayoutInflater.from(context);
+            final View view = factory.inflate(R.layout.dialog_center_info, null);
+            final AlertDialog centerInfoDialog = new AlertDialog.Builder(context).create();
+            centerInfoDialog.setView(view);
 
-                yes.setOnClickListener(v1 -> appointmentConfirmationDialog.dismiss());
+            TextView ok = view.findViewById(R.id.ok);
+            TextView name = view.findViewById(R.id.name);
+            TextView details = view.findViewById(R.id.details);
 
-                no.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        appointmentConfirmationDialog.dismiss();
-                    }
-                });
-                appointmentConfirmationDialog.show();
+            name.setText(center.getName());
+            details.setText(center.getInfo());
+
+            ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    centerInfoDialog.dismiss();
+                }
             });
+
+            centerInfoDialog.show();
+        });
+
+        holder.makeAppointmentBtn.setOnClickListener(v -> {
+            LayoutInflater factory = LayoutInflater.from(context);
+            final View view = factory.inflate(R.layout.dialog_confirm_appointment, null);
+            final AlertDialog appointmentConfirmationDialog = new AlertDialog.Builder(context).create();
+            appointmentConfirmationDialog.setView(view);
+
+            TextView yes = view.findViewById(R.id.yes_btn);
+            TextView no = view.findViewById(R.id.no_btn);
+
+            yes.setOnClickListener(v1 -> {
+                bookAppointment(patientId, center);
+                appointmentConfirmationDialog.dismiss();
+            });
+
+            no.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    appointmentConfirmationDialog.dismiss();
+                }
+            });
+            appointmentConfirmationDialog.show();
+        });
     }
 
 
+    //todo api call (book an appointment)
+    private void bookAppointment(int patientId, Center center) {
+
+    }
 
 
     @Override
@@ -121,25 +141,13 @@ public class DialysisCentersAdapter extends RecyclerView.Adapter<DialysisCenters
                     filterResults.values = centersFiltered;
 
                 }else{
-                    String searchChr = charSequence.toString().toLowerCase();
-                    String selectedCategory =  searchChr.split(":")[1];
-                    String search =  searchChr.split(":")[0];
 
-                    Log.e("filter", selectedCategory);
                     List<Center> resultData = new ArrayList<>();
 
-                    if(search.equals("")){
-                        for(Center center: centersFiltered){
-                            if(true){
 
-                                resultData.add(center);
-                            }
-                        }
-                    }else{
-                        for(Center center: centers){
-                            if(true){
-                                resultData.add(center);
-                            }
+                    for(Center center: centers){
+                        if(center.getName().toLowerCase().contains(charSequence)){
+                            resultData.add(center);
                         }
                     }
 
@@ -163,7 +171,6 @@ public class DialysisCentersAdapter extends RecyclerView.Adapter<DialysisCenters
 
         public TextView centerNameTV;
         public TextView doctorNameTV;
-        public TextView locationTV;
         public TextView distanceTV;
         public Button makeAppointmentBtn;
 
@@ -171,62 +178,12 @@ public class DialysisCentersAdapter extends RecyclerView.Adapter<DialysisCenters
             super(itemView);
             this.centerNameTV = itemView.findViewById(R.id.center_name);
             this.doctorNameTV = itemView.findViewById(R.id.doctor_name);
-            this.locationTV = itemView.findViewById(R.id.location);
             this.distanceTV = itemView.findViewById(R.id.distance);
             this.makeAppointmentBtn = itemView.findViewById(R.id.make_appointment);
         }
     }
 
 
-    public interface OnDonationSelected{
-        void onCenterSelected(String desc);
-    }
-
-    private void orderItem(int id) {
-
-        int userId = SharedPrefManager.getInstance(context).getUserId();
-
-        final ProgressDialog pDialog = new ProgressDialog(context);
-        pDialog.setMessage("Processing Please wait...");
-        pDialog.show();
-
-        AndroidNetworking.post("Urls.GET_DONATIONS")
-                .addBodyParameter("user_id", String.valueOf(userId))
-                .addBodyParameter("donation_id", String.valueOf(id))
-                .setPriority(Priority.MEDIUM)
-                .build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // do anything with response
-                        pDialog.dismiss();
-
-                        try {
-                            //converting response to json object
-                            JSONObject obj = response;
-
-                            //if no error in response
-                            if (obj.getInt("status") == 1) {
-
-                                Toast.makeText(context, obj.getString("message"), Toast.LENGTH_SHORT).show();
-
-                            } else if(obj.getInt("status") == -1){
-                                Toast.makeText(context, obj.getString("message"), Toast.LENGTH_SHORT).show();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(ANError anError) {
-                        pDialog.dismiss();
-                        Toast.makeText(context, anError.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-    }
 
 
 }

@@ -50,34 +50,10 @@ public class Login extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-
-                ArrayList<EditText> arrayList = new ArrayList<EditText>(){
-                    {
-                        add(mUserNameET);
-                        add(mPassET);
-                    }
-                };
-                if(Validation.validateInput(arrayList, getApplicationContext())){
+                if(Validation.validateInput(Login.this, mUserNameET, mPassET)) {
                     startActivity(new Intent(Login.this, PatientMain.class));
                     finish();
-                }else{
-                   return;
                 }
-//                //validation
-//                String userName = mUserNameET.getText().toString().trim();
-//                String password = mPassET.getText().toString().trim();
-//
-//                // Check for empty data in the form
-//                if (!userName.isEmpty() && !password.isEmpty()) {
-//                    // login user
-//                    mLoginBtn.setEnabled(false);
-//                    login(userName, password);
-//                } else {
-//                    // Prompt user to enter credentials
-//                    Toast.makeText(getApplicationContext(),
-//                            getResources().getString(R.string.user_and_password_required), Toast.LENGTH_LONG)
-//                            .show();
-//                }
             }
         });
 

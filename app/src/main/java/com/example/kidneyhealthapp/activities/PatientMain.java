@@ -58,7 +58,7 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.menu_dialysis_centers,R.id.menu_appointments).setOpenableLayout(drawerLayout).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.menu_dialysis_centers, R.id.menu_appointments).setOpenableLayout(drawerLayout).build();
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 
@@ -90,10 +90,9 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-//        menuItem.setChecked(true);
-        int id = menuItem.getItemId();
+        menuItem.setChecked(true);
 
-        navigationView.getMenu().findItem(id).setChecked(true);
+        int id = menuItem.getItemId();
 
         switch (id) {
 
@@ -103,6 +102,7 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
             case R.id.menu_appointments:
                 destination = R.id.menu_appointments;
                 break;
+
 
         }
 

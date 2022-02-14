@@ -41,6 +41,7 @@
         android:paddingBottom="16dp"
         android:textColor="@color/primaryTextColorDark"
         android:text="@string/yes"/>
+
     <TextView
         android:id="@+id/no_btn"
         android:layout_width="wrap_content"
