@@ -17,4 +17,6 @@ public class Urls {
     public static final String GET_PATIENTS_LIST = "";
 
 
+    public static final String GET_MESSAGES_LIST = "";
+    public static final String GET_MESSAGES_WITH = "";
 }

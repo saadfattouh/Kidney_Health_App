@@ -16,4 +16,19 @@
         android:name="com.example.kidneyhealthapp.fragments.patient.MyAppointmentsFragment"
         android:label="fragment_my_appointments"
         tools:layout="@layout/fragment_my_appointments" />
+    <fragment
+        android:id="@+id/doctorsChatList"
+        android:name="com.example.kidneyhealthapp.fragments.patient.DoctorsChatList"
+        android:label="fragment_doctors_chat_list"
+        tools:layout="@layout/fragment_doctors_chat_list" >
+        <action
+            android:id="@+id/action_doctorsChatList_to_chattingFragment"
+            app:destination="@id/chattingFragment"
+            app:popUpTo="@id/doctorsChatList"/>
+    </fragment>
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.example.kidneyhealthapp.fragments.patient.ChattingWithDoctorFragment"
+        android:label="fragment_chatting"
+        tools:layout="@layout/fragment_chatting" />
 </navigation>

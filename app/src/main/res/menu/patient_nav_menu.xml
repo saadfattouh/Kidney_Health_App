@@ -18,13 +18,12 @@
         android:id="@+id/menu_daily_info"
         android:icon="@drawable/ic_daily"
         android:title="@string/daily_info"
-        android:actionLayout="@layout/fragment_dialysis_centers"
         />
     <item
-    android:id="@+id/menu_doctor_instructions"
-    android:icon="@drawable/ic_instructions"
-    android:title="@string/doctor_inst"
-    android:actionLayout="@layout/fragment_dialysis_centers"
+        android:id="@+id/menu_doctors"
+        android:icon="@drawable/ic_instructions"
+        android:title="@string/doctor_inst"
+        android:actionLayout="@layout/fragment_doctors_chat_list"
     />
     <item
         android:id="@+id/menu_logout"

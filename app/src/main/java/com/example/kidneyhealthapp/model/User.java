@@ -15,7 +15,7 @@ public class User {
     private LatLon location;
 
 
-    public User(int id, String firstName, String lastName, String userName, String phone, int age, int gender, LatLon location, ArrayList<PatientInfo> medicinesList) {
+    public User(int id, String firstName, String lastName, String userName, String phone, int age, int gender, LatLon location) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
