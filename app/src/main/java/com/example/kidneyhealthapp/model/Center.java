@@ -3,6 +3,12 @@ package com.example.kidneyhealthapp.model;
 public class Center {
     private int id;
     private String name;
+    private String doctorName;
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
     private double lat;
     private double lon;
     private String info;

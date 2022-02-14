@@ -7,7 +7,8 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".activities.Register">
+    tools:context=".activities.Register"
+    android:layoutDirection="ltr">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -72,27 +73,28 @@
             android:id="@+id/type_selector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="10dp"
             android:orientation="horizontal"
             android:layout_marginBottom="10dp"
+            android:weightSum="2"
 
             >
             <RadioButton
                 android:id="@+id/main_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:textColor="@color/white"
                 android:buttonTint="@color/white"
-                android:text="@string/male"/>
+                android:text="@string/male"
+                android:layout_weight="1"/>
             <RadioButton
                 android:id="@+id/donor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:textColor="@color/white"
                 android:buttonTint="@color/white"
-                android:text="@string/female"/>
+                android:text="@string/female"
+                android:layout_weight="1"/>
 
 
         </RadioGroup>

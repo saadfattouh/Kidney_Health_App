@@ -5,12 +5,16 @@ public class Urls {
 
     //MAIN REQUESTS
     public static final String BASE_URL = "";
-    public static final String LOGIN_URL = "";
-    public static final String REGISTER_URL = "";
-    public static final String RESET_PASSWORD_URL = "";
-    public static final String UPDATE_ACC_URL = "";
-    public static final String FEEDBACK_URL = "";
-    public static final String _URL = "";
+    public static final String LOGIN = "";
+    public static final String REGISTER = "";
+    public static final String RESET_PASSWORD = "";
+    public static final String UPDATE_PATIENT_ACC = "";
+    public static final String UPDATE_DOCTOR_ACC = "";
+
+    public static final String GET_CENTERS = "";
+    public static final String SEND_APPOINTMENT_REQUEST = "";
+    public static final String GET_APPOINTMENT_REQUESTS = "";
+    public static final String GET_PATIENTS_LIST = "";
 
 
 }

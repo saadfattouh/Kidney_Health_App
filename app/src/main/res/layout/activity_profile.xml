@@ -38,7 +38,7 @@
                     android:src="@drawable/ic_profile" />
 
                 <TextView
-                    android:id="@+id/name_text_view"
+                    android:id="@+id/name_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -53,7 +53,7 @@
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/name_text_view"
+                    android:layout_below="@id/name_tv"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
                     android:layout_toEndOf="@id/profile_icon"
@@ -76,10 +76,10 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_username" />
+                    android:src="@drawable/ic_medical_id" />
 
                 <TextView
-                    android:id="@+id/user_name_text_view"
+                    android:id="@+id/user_name_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -94,7 +94,7 @@
                     android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/user_name_text_view"
+                    android:layout_below="@id/user_name_tv"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
                     android:layout_toEndOf="@id/username_icon"
@@ -118,10 +118,10 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_phone" />
+                    android:src="@drawable/ic_medical_phone" />
 
                 <TextView
-                    android:id="@+id/phone_text_view"
+                    android:id="@+id/phone_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -135,7 +135,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/phone_text_view"
+                    android:layout_below="@id/phone_tv"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
                     android:layout_toEndOf="@id/phone_icon"
@@ -159,16 +159,16 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_address" />
+                    android:src="@drawable/ic_medical_location" />
 
                 <TextView
-                    android:id="@+id/address_text_view"
+                    android:id="@+id/address_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_toEndOf="@id/address_icon"
-                    android:text="Adress"
+                    android:text="Address"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -176,7 +176,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/address_text_view"
+                    android:layout_below="@id/address_tv"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
                     android:layout_toEndOf="@id/address_icon"
@@ -194,51 +194,12 @@
                 android:layout_marginBottom="20dp"
                 android:background="@android:color/black" />
 
-            <RelativeLayout
-                android:id="@+id/num_of_requests_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/divider"
-                android:layout_marginStart="30dp"
-                android:layout_marginBottom="20dp">
 
-                <ImageView
-                    android:id="@+id/num_of_requests_img"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/ic_num_responses" />
-
-                <TextView
-                    android:id="@+id/num_of_requests_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toEndOf="@id/num_of_requests_img"
-                    android:text="Number of Responses"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/num_of_requests_text_view"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_toEndOf="@id/num_of_requests_img"
-                    android:text="3" />
-
-
-            </RelativeLayout>
             <Button
                 android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/num_of_requests_layout"
+                android:layout_below="@id/divider"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="16dp"
@@ -247,7 +208,7 @@
                 android:textColor="@android:color/white"
                 android:textAllCaps="false"
                 android:textSize="20sp"
-                android:background="@color/secondary"
+                android:background="@color/colorPrimaryDark"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="30dp"
                 />

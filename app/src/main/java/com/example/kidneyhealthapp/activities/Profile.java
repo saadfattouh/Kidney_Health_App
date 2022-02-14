@@ -10,8 +10,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kidneyhealthapp.R;
+import com.example.kidneyhealthapp.model.Doctor;
 import com.example.kidneyhealthapp.model.User;
 import com.example.kidneyhealthapp.utils.DoctorPrefs;
+import com.example.kidneyhealthapp.utils.SharedPrefManager;
 
 public class Profile extends AppCompatActivity {
 
@@ -32,17 +34,18 @@ public class Profile extends AppCompatActivity {
 
         mLogoutBtn = findViewById(R.id.logout);
 
-        mFullNameTV = findViewById(R.id.name_text_view);
-        mUserNameTV = findViewById(R.id.user_name_text_view);
-        mPhoneTV = findViewById(R.id.phone_text_view);
-        mAddressTV = findViewById(R.id.address_text_view);
+        mFullNameTV = findViewById(R.id.name_tv);
+        mUserNameTV = findViewById(R.id.user_name_tv);
+        mPhoneTV = findViewById(R.id.phone_tv);
+        mAddressTV = findViewById(R.id.address_tv);
 
-        User user = DoctorPrefs.getInstance(this).getUserData();
+        Doctor doctor = DoctorPrefs.getInstance(this).getUserData();
+        User user = SharedPrefManager.getInstance(this).getUserData();
 
-        mFullNameTV.setText(user.getName());
+        mFullNameTV.setText(user.getFirstName() + " " +user.getLastName());
         mUserNameTV.setText(user.getUserName());
         mPhoneTV.setText(user.getPhone());
-        mAddressTV.setText(user.getAddress());
+//        mAddressTV.setText(user.getLocation());
 
         mLogoutBtn.setOnClickListener(v -> {
             logOut();
@@ -52,7 +55,14 @@ public class Profile extends AppCompatActivity {
     }
 
     public void logOut(){
-        DoctorPrefs.getInstance(this).logout();
+        if(DoctorPrefs.getInstance(this) != null){
+            DoctorPrefs.getInstance(this).logout();
+        }else{
+            SharedPrefManager.getInstance(this).logout();
+
+        }
+
+
         PackageManager packageManager = this.getPackageManager();
         Intent intent = packageManager.getLaunchIntentForPackage(this.getPackageName());
         ComponentName componentName = intent.getComponent();

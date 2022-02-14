@@ -1,75 +1,43 @@
 <resources>
     <string name="app_name">Kidney Health App</string>
 
-    <string name="hint_user_name">user name</string>
-    <string name="hint_password">password</string>
-    <string name="btn_login">Login</string>
-    <string name="btn_link_to_register">Not a member? Sign up now.</string>
-    <string name="user_and_password_required">user name and password must not be empty!</string>
-    <string name="register">Register</string>
-    <string name="btn_link_to_login">Already registered! Login.</string>
-    <string name="hint_phone">phone</string>
-    <string name="hint_address">address</string>
 
-    <string name="user_type">User Type</string>
-
-
-    <string name="phone_missing_message">please enter your phone number!</string>
-    <string name="password_missing_message">please enter your password!</string>
-    <string name="name_missing_message">please enter your full name !</string>
-    <string name="user_name_missing_message">Please enter your user name!</string>
-    <string name="address_missing_message">please enter your address !</string>
-    <string name="type_missing_message">please select your account type!</string>
-    <string name="send_report">Send Problem Report</string>
-    <string name="hint_problem_report_title">Title</string>
-    <string name="hint_details">Details</string>
-    <string name="send">Send</string>
-    <string name="update">Update</string>
-    <string name="logout">logout</string>
-    <string name="profile_name">full  name</string>
-    <string name="profile_mobile">phone number</string>
-    <string name="profile_address">address</string>
-    <string name="profile_username">user name</string>
-    <string name="donation_title">donation title</string>
-    <string name="donation_description">description</string>
-    <string name="order_date">28-1-2022</string>
-    <string name="order">Order</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="menu_donations">Donations</string>
-    <string name="menu_report_problem">Send Problem Report</string>
-    <string name="menu_share">Share</string>
-    <string name="service_title">service title</string>
-    <string name="service_description">service descruption</string>
-    <string name="service_region">service region</string>
-    <string name="volunteer_region">volunteer region</string>
-    <string name="availability">availability</string>
-    <string name="cancel">Cancel</string>
-    <string name="confirmation_dialog">Confirmation Dialog</string>
-    <string name="are_you_sure_you_want_to_order">Are you sure you want to order this item ?</string>
-    <string name="my_orders">My orders</string>
-    <string name="charitable_events">Charitable events</string>
-
-    //status-related
-    <string name="status_new">NEW</string>
-    <string name="status_rejected">REJECTED</string>
-    <string name="status_processing">PROCESSING</string>
-    <string name="status_completed">COMPLETED</string>
-
-
-    <string name="show_message">Show message</string>
-    <string name="ok">Ok</string>
-    <string name="order_status_message">"Donation Order Status is : "</string>
-    <string name="message">Message : </string>
-
-    <string name="start_at">start at</string>
-    <string name="end_at">end at</string>
     <string name="hint_last_name">last name</string>
     <string name="hint_first_name">first name</string>
     <string name="patient">Patient</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="hint_age">age</string>
+    <string name="center_name">Center name</string>
+    <string name="dialysis_centers">Dialysis Centers</string>
+    <string name="hint_name">Name</string>
+    <string name="doctor_name">Doctor name</string>
+    <string name="hint_user_name">User name</string>
+    <string name="hint_password">password</string>
+    <string name="login">Login</string>
+    <string name="btn_link_to_register">Not registered yet..Register</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_address">Address</string>
+    <string name="register">Register</string>
+    <string name="btn_link_to_login">You are already registered..Login</string>
+    <string name="center_location">Location</string>
+    <string name="make_appointment">Make an appointment</string>
+    <string name="confirmation_dialog">Appointment Confirmation</string>
+    <string name="are_you_sure_you">Are you sure you want to approve this appointment?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">cancel</string>
+    <string name="profile_name">Name</string>
+    <string name="profile_username">Username</string>
+    <string name="profile_mobile">"Mobile "</string>
+    <string name="profile_address">Address</string>
+    <string name="logout">Logout</string>
+    <string name="update">Update</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_report_problem">report</string>
+    <string name="field_missing_message">Some fileds are missing Please fill them</string>
+    <string name="my_appointments">My Appointments</string>
+    <string name="daily_info">Daily info</string>
+    <string name="doctor_inst">Doctor Instruction</string>
 
 
 </resources>

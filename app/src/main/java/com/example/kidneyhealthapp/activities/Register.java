@@ -14,9 +14,8 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.example.sanabelalkhayr.Constants;
-import com.example.sanabelalkhayr.R;
-import com.example.sanabelalkhayr.api.Urls;
+import com.example.kidneyhealthapp.R;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,17 +62,17 @@ public class Register extends AppCompatActivity {
 
 
         mAccountTypeSelector.setOnCheckedChangeListener((group, checkedId) -> {
-            switch (checkedId){
-                case R.id.main_user:
-                    selectedUserType = Constants.USER_TYPE_MAIN;
-                    break;
-                case R.id.donor:
-                    selectedUserType = Constants.USER_TYPE_DONOR;
-                    break;
-                case R.id.volunteer:
-                    selectedUserType = Constants.USER_TYPE_VOLUNTEER;
-                    break;
-            }
+//            switch (checkedId){
+//                case R.id.main_user:
+//                    selectedUserType = Constants.USER_TYPE_MAIN;
+//                    break;
+//                case R.id.donor:
+//                    selectedUserType = Constants.USER_TYPE_DONOR;
+//                    break;
+//                case R.id.volunteer:
+//                    selectedUserType = Constants.USER_TYPE_VOLUNTEER;
+//                    break;
+//            }
         });
 
 
@@ -105,21 +104,21 @@ public class Register extends AppCompatActivity {
 
         //checking if username is empty
         if (TextUtils.isEmpty(name)) {
-            Toast.makeText(this, getResources().getString(R.string.name_missing_message), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.field_missing_message), Toast.LENGTH_SHORT).show();
             mRegisterBtn.setEnabled(true);
             return false;
         }
 
         //checking if userName is empty
         if (TextUtils.isEmpty(userName)) {
-            Toast.makeText(this, getResources().getString(R.string.user_name_missing_message), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.field_missing_message), Toast.LENGTH_SHORT).show();
             mRegisterBtn.setEnabled(true);
             return false;
         }
 
         //checking if password is empty
         if (TextUtils.isEmpty(pass)) {
-            Toast.makeText(this, getResources().getString(R.string.password_missing_message), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.field_missing_message), Toast.LENGTH_SHORT).show();
             mRegisterBtn.setEnabled(true);
             return false;
         }
@@ -127,7 +126,7 @@ public class Register extends AppCompatActivity {
 
         //checking if phone is empty
         if (TextUtils.isEmpty(phone)) {
-            Toast.makeText(this, getResources().getString(R.string.phone_missing_message), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.field_missing_message), Toast.LENGTH_SHORT).show();
             mRegisterBtn.setEnabled(true);
             return false;
         }
@@ -136,13 +135,13 @@ public class Register extends AppCompatActivity {
 
         //checking if address is empty
         if (TextUtils.isEmpty(address)) {
-            Toast.makeText(this, getResources().getString(R.string.address_missing_message), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.field_missing_message), Toast.LENGTH_SHORT).show();
             mRegisterBtn.setEnabled(true);
             return false;
         }
 
         if(selectedUserType == -1){
-            Toast.makeText(this, getResources().getString(R.string.type_missing_message), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.field_missing_message), Toast.LENGTH_SHORT).show();
             mRegisterBtn.setEnabled(true);
             return false;
         }
@@ -162,7 +161,7 @@ public class Register extends AppCompatActivity {
         final String address = mAddressET.getText().toString();
 
 
-        String url = Urls.BASE_URL + Urls.REGISTER_URL;
+        String url = "";
 
         AndroidNetworking.post(url)
                 .addBodyParameter("type", String.valueOf(selectedUserType))

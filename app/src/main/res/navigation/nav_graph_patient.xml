@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu_dialysis_centers">
+
+    <fragment
+        android:id="@+id/menu_dialysis_centers"
+        android:name="com.example.kidneyhealthapp.fragments.patient.DialysisCentersFragment"
+        android:label="DialysisCentersFragment"
+        tools:layout="@layout/fragment_dialysis_centers"
+        />
+    <fragment
+        android:id="@+id/menu_appointments"
+        android:name="com.example.kidneyhealthapp.fragments.patient.MyAppointmentsFragment"
+        android:label="fragment_my_appointments"
+        tools:layout="@layout/fragment_my_appointments" />
+</navigation>

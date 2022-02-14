@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/menu_dialysis_centers"
+        android:icon="@drawable/hospital"
+        android:title="@string/dialysis_centers"
+        android:actionLayout="@layout/fragment_dialysis_centers"
+        />
+
+    <item
+        android:id="@+id/menu_appointments"
+        android:icon="@drawable/ic_medical_appointment"
+        android:title="@string/my_appointments"
+        android:actionLayout="@layout/fragment_my_appointments"
+        />
+    <item
+        android:id="@+id/menu_daily_info"
+        android:icon="@drawable/ic_daily"
+        android:title="@string/daily_info"
+        android:actionLayout="@layout/fragment_dialysis_centers"
+        />
+    <item
+    android:id="@+id/menu_doctor_instructions"
+    android:icon="@drawable/ic_instructions"
+    android:title="@string/doctor_inst"
+    android:actionLayout="@layout/fragment_dialysis_centers"
+    />
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"
+        />
+
+
+</group>
+
+</menu>

@@ -6,37 +6,34 @@ import android.content.SharedPreferences;
 import com.example.kidneyhealthapp.model.LatLon;
 import com.example.kidneyhealthapp.model.User;
 
-import java.util.ArrayList;
 
-
-public class PatientPrefs {
+public class SharedPrefManager {
 
     private static final String SHARED_PREF_NAME = "generalFile";
 
-    private static final String KEY_ID = "keyid";
-    private static final String KEY_FIRST_NAME = "keyfname";
-    private static final String KEY_LAST_NAME = "keylname";
-    private static final String KEY_USERNAME = "keyusername";
-    private static final String KEY_PHONE = "keyphone";
-    private static final String KEY_AGE = "keyage";
+    private static final String KEY_ID = "key_user_id";
+    private static final String KEY_FIRST_NAME = "key_f_name";
+    private static final String KEY_LAST_NAME = "key_l_name";
+    private static final String KEY_USERNAME = "key_user_name";
+    private static final String KEY_PHONE = "key_phone";
+    private static final String KEY_AGE = "key_age";
     private static final String KEY_USER_TYPE = "userType";
     private static final String KEY_LAT = "lat";
     private static final String KEY_LON = "lon";
     private static final String KEY_GENDER = "keyGender";
-
-
+    private static final String KEY_ABOUT = "key_about";
     private static final String KEY_LOCATION_SET = "locationSet";
 
 
-    private static PatientPrefs mInstance;
+    private static SharedPrefManager mInstance;
     private static Context context;
 
-    private PatientPrefs(Context context) {
-        PatientPrefs.context = context;
+    private SharedPrefManager(Context context) {
+        SharedPrefManager.context = context;
     }
-    public static synchronized PatientPrefs getInstance(Context context) {
+    public static synchronized SharedPrefManager getInstance(Context context) {
         if (mInstance == null) {
-            mInstance = new PatientPrefs(context);
+            mInstance = new SharedPrefManager(context);
         }
         return mInstance;
     }

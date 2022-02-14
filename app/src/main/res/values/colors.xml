@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2ca3fa</color>
-    <color name="colorPrimaryDark">#034c81</color>
-    <color name="colorAccent">#5ba2f4</color>
+    <color name="colorPrimary">#04B2C8</color>
+    <color name="colorPrimaryDark">#111F37</color>
+    <color name="colorAccent">#1D3967</color>
+    <color name="colorSecondary">#428bca</color>
 
     <color name="lightGrey">#7f858c</color>
     <color name="likeYellow">#c9bbaa</color>
@@ -16,17 +17,13 @@
     <!--    all activities background-->
     <color name="app_bg">#ffffff</color>
     <!--    second color -->
-    <color name="secondary">#26ae90</color>
 
     <color name="input_login">#222222</color>
     <color name="input_login_hint">#999999</color>
     <color name="input_register">#888888</color>
     <color name="input_register_bg">#3b4148</color>
     <color name="input_register_hint">#5e6266</color>
-    <color name="btn_login">#26ae90</color>
-    <color name="btn_login_bg">#eceef1</color>
-    <color name="lbl_name">#333333</color>
-    <color name="btn_logut_bg">#ff6861</color>
+
 
 
     <color name="status_new">#0275d8</color>
