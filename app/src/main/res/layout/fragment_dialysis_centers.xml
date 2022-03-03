@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/donation_bg"
     tools:context=".fragments.patient.DialysisCentersFragment">
-
+<!--finished-->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested_sV"
         android:layout_width="match_parent"

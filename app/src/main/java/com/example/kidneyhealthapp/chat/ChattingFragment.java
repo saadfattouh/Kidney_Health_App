@@ -93,7 +93,7 @@ public class ChattingFragment extends Fragment {
             add(new BaseMessage("1", true, "hey"));
             add(new BaseMessage("1", false, "how are you"));
             add(new BaseMessage("1", true, "fine HBU?"));
-            add(new BaseMessage("1", false, "great thanks, how's he weather today?"));
+            add(new BaseMessage("1", false, "great thanks, how's the weather today?"));
             add(new BaseMessage("1", true, "it's cool let's hang out bud"));
         }};
 

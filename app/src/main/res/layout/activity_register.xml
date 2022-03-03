@@ -139,51 +139,6 @@
             android:textColor="@color/input_login"
             android:textColorHint="@color/input_login_hint" />
 
-        <EditText
-            android:id="@+id/details"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/hint_address"
-            android:inputType="textMultiLine"
-            android:lines="3"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:background="@drawable/bg_et_input"
-            android:textColor="@color/input_login"
-            android:textColorHint="@color/input_login_hint" />
-
-        <RadioGroup
-            android:id="@+id/type_selector"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
-            android:weightSum="2"
-
-            >
-            <RadioButton
-                android:id="@+id/doctor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:text="@string/male"
-                android:layout_weight="1"/>
-            <RadioButton
-                android:id="@+id/patient"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:buttonTint="@color/white"
-                android:text="@string/female"
-                android:layout_weight="1"/>
-
-
-        </RadioGroup>
-
-
 
 
         <!-- Login Button -->

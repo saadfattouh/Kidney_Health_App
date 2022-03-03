@@ -58,6 +58,10 @@
     <string name="patient_name">Patient name</string>
     <string name="approve">Approve</string>
     <string name="reject">Reject</string>
+    <string name="center_info">Center Info</string>
+    <string name="update_center">Update Center Information</string>
+    <string name="view_profile">View Patient Profile</string>
+    <string name="hint_gender">Gender</string>
 
 
 </resources>
