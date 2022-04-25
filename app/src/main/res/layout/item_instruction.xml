@@ -5,7 +5,10 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_rounded_corners_white"
     android:layout_margin="8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layoutDirection="ltr"
+    >
 
     <TextView
         android:id="@+id/date"

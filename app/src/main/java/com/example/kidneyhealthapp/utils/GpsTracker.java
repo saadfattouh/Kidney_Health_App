@@ -15,6 +15,7 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -200,8 +201,8 @@ public class GpsTracker extends Service implements LocationListener {
     }
 
     @Override
-    public void onLocationChanged(Location location) {
-        sendBroadcast(location);
+    public void onLocationChanged(@NonNull Location location) {
+
     }
 
     @Override
@@ -221,11 +222,16 @@ public class GpsTracker extends Service implements LocationListener {
         return null;
     }
 
-    private void sendBroadcast (Location location){
-        Intent intent = new Intent ("location"); //put the same  filter you used in the activity when registering the receiver
-        intent.putExtra("latitude", location.getLatitude());
-        intent.putExtra("longitude", location.getLongitude());
-        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
-    }
+//    private void sendBroadcast (Location location){
+//        Intent intent = new Intent ("location"); //put the same  filter you used in the activity when registering the receiver
+//        intent.putExtra("latitude", location.getLatitude());
+//        intent.putExtra("longitude", location.getLongitude());
+//        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+//    }
 
+
+    @Override
+    public void sendBroadcast(Intent intent) {
+        super.sendBroadcast(intent);
+    }
 }

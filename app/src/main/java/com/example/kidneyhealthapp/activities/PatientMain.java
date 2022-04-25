@@ -59,7 +59,7 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.menu_dialysis_centers, R.id.menu_appointments, R.id.doctorsChatList).setOpenableLayout(drawerLayout).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.menu_dialysis_centers, R.id.menu_appointments, R.id.menu_daily_info, R.id.menu_doctors, R.id.menu_chat_list,R.id.menu_patient_profile).setOpenableLayout(drawerLayout).build();
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 
@@ -103,9 +103,18 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
             case R.id.menu_appointments:
                 destination = R.id.menu_appointments;
                 break;
-
+            case R.id.menu_daily_info:
+                destination = R.id.menu_daily_info;
+                break;
             case R.id.menu_doctors:
-                destination = R.id.doctorsChatList;
+                destination = R.id.menu_doctors;
+                break;
+
+            case R.id.menu_chat_list:
+                destination = R.id.menu_chat_list;
+                break;
+            case R.id.menu_patient_profile:
+                destination = R.id.menu_patient_profile;
                 break;
             case R.id.menu_logout:
                 SharedPrefManager.getInstance(this).logout();

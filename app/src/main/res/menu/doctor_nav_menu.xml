@@ -9,16 +9,16 @@
             />
 
         <item
-            android:id="@+id/menu_patients"
+            android:id="@+id/menu_center_patients"
             android:icon="@drawable/ic_people"
-            android:title="@string/patients"
-            android:actionLayout="@layout/fragment_patients"
+            android:title="@string/center_patients"
+            android:actionLayout="@layout/fragment_center_patients"
             />
         <item
             android:id="@+id/menu_profile"
             android:icon="@drawable/ic_profile"
-            android:title="@string/daily_info"
-            android:actionLayout="@layout/fragment_profile_doctor"
+            android:title="@string/profile"
+            android:actionLayout="@layout/fragment_doctor_profile"
             />
         <item
             android:id="@+id/menu_my_center"
@@ -28,9 +28,9 @@
             />
 
         <item
-            android:id="@+id/menu_chat"
+            android:id="@+id/menu_chat_list"
             android:icon="@drawable/ic_chat"
-            android:title="@string/chat"
+            android:title="@string/chat_list"
             android:actionLayout="@layout/fragment_doctors_chat_list"
             />
         <item

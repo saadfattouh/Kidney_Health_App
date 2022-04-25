@@ -9,7 +9,7 @@ public class Appointment {
     private int status;
     private String resultInfo;
     private String patientStatus;
-
+    private String patientName;
 
     public Appointment(int id, String doctorName, String centerName, int patientId, String date, int status, String resultInfo, String patientStatus) {
         this.id = id;
@@ -20,6 +20,23 @@ public class Appointment {
         this.status = status;
         this.resultInfo = resultInfo;
         this.patientStatus = patientStatus;
+    }
+
+    //Constructor for appointment requests
+    public Appointment(int id, String doctorName, String centerName, int patientId, String date, int status, String resultInfo, String patientStatus, String patientName) {
+        this.id = id;
+        this.doctorName = doctorName;
+        this.centerName = centerName;
+        this.patientId = patientId;
+        this.date = date;
+        this.status = status;
+        this.resultInfo = resultInfo;
+        this.patientStatus = patientStatus;
+        this.patientName = patientName;
+    }
+
+    public String getPatientName() {
+        return patientName;
     }
 
     public String getDoctorName() {

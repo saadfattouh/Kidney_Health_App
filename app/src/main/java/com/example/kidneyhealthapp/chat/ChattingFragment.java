@@ -19,7 +19,7 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.kidneyhealthapp.R;
-import com.example.kidneyhealthapp.api.Urls;
+import com.example.kidneyhealthapp.utils.Urls;
 import com.example.kidneyhealthapp.chat.models.BaseMessage;
 import com.example.kidneyhealthapp.utils.SharedPrefManager;
 import com.google.android.material.textfield.TextInputEditText;
@@ -97,7 +97,7 @@ public class ChattingFragment extends Fragment {
             add(new BaseMessage("1", true, "it's cool let's hang out bud"));
         }};
 
-        messagesAdapter = new ChatMessagesAdapter(messages, getContext());
+//        messagesAdapter = new ChatMessagesAdapter(messages, getContext());
         mMessagesList.setAdapter(messagesAdapter);
 
 //        getAllMessages();
@@ -121,7 +121,7 @@ public class ChattingFragment extends Fragment {
             messages.add(baseMessage);
         }
 
-        messagesAdapter = new ChatMessagesAdapter(messages, getContext());
+//        messagesAdapter = new ChatMessagesAdapter(messages, getContext());
         mMessagesList.setAdapter(messagesAdapter);
 
 //        AndroidNetworking.post(url)
@@ -220,7 +220,7 @@ public class ChattingFragment extends Fragment {
                                     messages.add(baseMessage);
                                 }
 
-                                messagesAdapter = new ChatMessagesAdapter(messages, getContext());
+//                                messagesAdapter = new ChatMessagesAdapter(messages, getContext());
                                 mMessagesList.setAdapter(messagesAdapter);
 
                             } else {

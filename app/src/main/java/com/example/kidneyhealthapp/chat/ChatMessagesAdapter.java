@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kidneyhealthapp.R;
 import com.example.kidneyhealthapp.chat.models.BaseMessage;
+import com.example.kidneyhealthapp.model.Message;
+import com.example.kidneyhealthapp.utils.SharedPrefManager;
 
 import java.util.ArrayList;
 
@@ -20,18 +22,18 @@ public class ChatMessagesAdapter extends RecyclerView.Adapter {
     public static final int MESSAGE_FROM_OTHER = 1;
     public static final int MESSAGE_FROM_ME = 0;
 
-    ArrayList<BaseMessage> mMessageList;
+    ArrayList<Message> mMessageList;
     Context context;
 
 
-    public ChatMessagesAdapter(ArrayList<BaseMessage> mMessageList, Context context) {
+    public ChatMessagesAdapter(ArrayList<Message> mMessageList, Context context) {
         this.mMessageList = mMessageList;
         this.context = context;
     }
 
     @Override
     public int getItemViewType(int position) {
-        BaseMessage message =  mMessageList.get(position);
+        Message message =  mMessageList.get(position);
 
         if(message.isFromMe()){
             return MESSAGE_FROM_ME;
@@ -62,7 +64,7 @@ public class ChatMessagesAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        BaseMessage message = mMessageList.get(position);
+        Message message = mMessageList.get(position);
 
         switch (holder.getItemViewType()) {
             case MESSAGE_FROM_ME:
@@ -88,8 +90,8 @@ public class ChatMessagesAdapter extends RecyclerView.Adapter {
             this.message = itemView.findViewById(R.id.text_chat_message_me);
         }
 
-        void bind(BaseMessage message) {
-            this.message.setText(message.getMessage());
+        void bind(Message message) {
+            this.message.setText(message.getContent());
         }
     }
 
@@ -101,13 +103,8 @@ public class ChatMessagesAdapter extends RecyclerView.Adapter {
             super(itemView);
             this.message = itemView.findViewById(R.id.text_chat_message_other);
         }
-        void bind(BaseMessage message) {
-            this.message.setText(message.getMessage());
-
+        void bind(Message message) {
+            this.message.setText(message.getContent());
         }
-
-
     }
-
-
 }

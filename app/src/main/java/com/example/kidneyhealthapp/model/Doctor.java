@@ -1,31 +1,28 @@
 package com.example.kidneyhealthapp.model;
 
-public class Doctor {
+import java.io.Serializable;
+
+public class Doctor implements Serializable {
     private  int id;
-    private int centerId;
     private  String firstName;
     private String lastName;
-    private String userName;
+    private String email;
     private String phone;
-    private String about;
+    private String details;
 
-    public Doctor(int id, int centerId, String firstName, String lastName, String userName, String phone, String about) {
+    public Doctor(int id, String firstName, String lastName, String email, String phone, String details) {
         this.id = id;
-        this.centerId = centerId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
+        this.email = email;
         this.phone = phone;
-        this.about = about;
+        this.details = details;
     }
 
     public int getId() {
         return id;
     }
 
-    public int getCenterId() {
-        return centerId;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -35,8 +32,8 @@ public class Doctor {
         return lastName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmail() {
+        return email;
     }
 
 
@@ -44,16 +41,12 @@ public class Doctor {
         return phone;
     }
 
-    public String getAbout() {
-        return about;
+    public String getDetails() {
+        return details;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public void setCenterId(int centerId) {
-        this.centerId = centerId;
     }
 
     public void setFirstName(String firstName) {
@@ -64,8 +57,8 @@ public class Doctor {
         this.lastName = lastName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 
@@ -73,7 +66,7 @@ public class Doctor {
         this.phone = phone;
     }
 
-    public void setAbout(String about) {
-        this.about = about;
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

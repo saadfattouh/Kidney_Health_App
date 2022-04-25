@@ -7,28 +7,82 @@
 
     <fragment
         android:id="@+id/menu_appointment_requests"
-        android:name="com.example.kidneyhealthapp.fragments.doctor.AppointmentRequestsFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.AppointmentRequestsFragment"
         android:label="@string/appointment_requests"
-        tools:layout="@layout/fragment_my_appointments" />
+        tools:layout="@layout/fragment_appointment_requests" />
     <fragment
-        android:id="@+id/menu_patients"
-        android:name="com.example.kidneyhealthapp.fragments.doctor.PatientsFragment"
+        android:id="@+id/menu_center_patients"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.CenterPatientsFragment"
         android:label="@string/patients"
-        tools:layout="@layout/fragment_patients" />
+        tools:layout="@layout/fragment_center_patients">
+        <action
+            android:id="@+id/action_CenterPatients_to_PatientDetailsFragment"
+            app:destination="@id/PatientDetailsFragment"
+            app:popUpTo="@id/menu_center_patients" />
+        <action
+            android:id="@+id/action_CenterPatients_to_InstructionsFragment"
+            app:destination="@id/InstructionsFragment"
+            app:popUpTo="@id/menu_center_patients" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PatientDetailsFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.PatientDetailsDoctorFragment"
+        android:label="@string/patient_details"
+        tools:layout="@layout/fragment_patient_details_doctor"/>
+    <fragment
+        android:id="@+id/InstructionsFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.InstructionsToPatientFragment"
+        android:label="@string/patient_instructions"
+        tools:layout="@layout/fragment_instructions_to_patient"/>
 
     <fragment
         android:id="@+id/menu_profile"
-        android:name="com.example.kidneyhealthapp.fragments.doctor.DoctorProfileFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.DoctorProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_profile_doctor">
+        tools:layout="@layout/fragment_doctor_profile">
         <action
-            android:id="@+id/action_doctorsChatList_to_chattingFragment"
-            app:destination="@id/chattingFragment"
-            app:popUpTo="@id/doctorsChatList" />
+            android:id="@+id/action_Profile_to_UpdateProfileFragment"
+            app:destination="@id/UpdateProfileFragment"
+            app:popUpTo="@id/menu_profile" />
     </fragment>
+
+    <fragment
+        android:id="@+id/UpdateProfileFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.DoctorUpdateProfileFragment"
+        android:label="@string/update_profile"
+        tools:layout="@layout/fragment_doctor_update_profile" />
     <fragment
         android:id="@+id/menu_my_center"
-        android:name="com.example.kidneyhealthapp.fragments.doctor.MyCenterFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.MyCenterFragment"
         android:label="@string/my_center"
-        tools:layout="@layout/fragment_my_center" />
+        tools:layout="@layout/fragment_my_center">
+        <action
+            android:id="@+id/action_Center_to_UpdateProfileFragment"
+            app:destination="@id/UpdateCenterFragment"
+            app:popUpTo="@id/menu_my_center" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/UpdateCenterFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.UpdateCenterFragment"
+        android:label="@string/update_center"
+        tools:layout="@layout/fragment_update_center" />
+
+    <fragment
+        android:id="@+id/menu_chat_list"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.PatientsChatList"
+        android:label="@string/chat_list"
+        tools:layout="@layout/fragment_patients_chat_list" >
+        <action
+            android:id="@+id/action_patientsChatList_to_chattingFragment"
+            app:destination="@id/chattingFragment"
+            app:popUpTo="@id/menu_chat_list"/>
+    </fragment>
+    <fragment
+        android:id="@+id/chattingFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.ChattingWithPatientsFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/fragment_chatting" >
+    </fragment>
 </navigation>

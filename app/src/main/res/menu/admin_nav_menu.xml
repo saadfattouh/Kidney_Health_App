@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_dialysis_centers"
+        android:icon="@drawable/hospital"
+        android:title="@string/manage_centers"
+        android:actionLayout="@layout/fragment_dialysis_centers"
+        />
+
+    <item
+        android:id="@+id/menu_doctors"
+        android:icon="@drawable/ic_people"
+        android:title="@string/manage_doctors"
+        android:actionLayout="@layout/fragment_manage_doctors_list"
+        />
+    <item
+        android:id="@+id/menu_patients"
+        android:icon="@drawable/ic_people"
+        android:title="@string/manage_patients"
+        android:actionLayout="@layout/fragment_dialysis_centers"
+        />
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"
+        />
 
 </menu>

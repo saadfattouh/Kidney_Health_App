@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/swipe_container"
+    android:id="@+id/swipe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -22,14 +22,14 @@
 
 
             <RelativeLayout
-                android:id="@+id/name_layout"
+                android:id="@+id/layout_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
-                    android:id="@+id/profile_icon"
+                    android:id="@+id/iv_profile"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_centerVertical="true"
@@ -38,39 +38,39 @@
                     android:src="@drawable/ic_profile" />
 
                 <TextView
-                    android:id="@+id/name_tv"
+                    android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_toEndOf="@id/profile_icon"
+                    android:layout_toEndOf="@id/iv_profile"
                     android:text="Full Name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/name_tv"
+                    android:layout_below="@id/txt_name"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_toEndOf="@id/profile_icon"
+                    android:layout_toEndOf="@id/iv_profile"
                     android:text="@string/profile_name" />
 
 
             </RelativeLayout>
             <RelativeLayout
-                android:id="@+id/username_layout"
+                android:id="@+id/layout_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/name_layout"
+                android:layout_below="@id/layout_name"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
-                    android:id="@+id/username_icon"
+                    android:id="@+id/iv_username"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_centerVertical="true"
@@ -79,40 +79,40 @@
                     android:src="@drawable/ic_medical_id" />
 
                 <TextView
-                    android:id="@+id/user_name_tv"
+                    android:id="@+id/txt_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_toEndOf="@id/username_icon"
-                    android:text="'User Name"
+                    android:layout_toEndOf="@id/iv_username"
+                    android:text="@string/hint_email"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/user_name"
+                    android:id="@+id/tv_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/user_name_tv"
+                    android:layout_below="@id/txt_user_name"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_toEndOf="@id/username_icon"
+                    android:layout_toEndOf="@id/iv_username"
                     android:text="@string/profile_username" />
 
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/phone_layout"
+                android:id="@+id/layout_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/username_layout"
+                android:layout_below="@id/layout_username"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
-                    android:id="@+id/phone_icon"
+                    android:id="@+id/iv_phone"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_centerVertical="true"
@@ -121,39 +121,40 @@
                     android:src="@drawable/ic_medical_phone" />
 
                 <TextView
-                    android:id="@+id/phone_tv"
+                    android:id="@+id/txt_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_toEndOf="@id/phone_icon"
+                    android:layout_toEndOf="@id/iv_phone"
                     android:text="Phone"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/phone_tv"
+                    android:layout_below="@id/txt_phone"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_toEndOf="@id/phone_icon"
+                    android:layout_toEndOf="@id/iv_phone"
                     android:text="@string/profile_mobile" />
 
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/address_layout"
+                android:id="@+id/layout_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/phone_layout"
+                android:layout_below="@id/layout_phone"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="20dp">
 
                 <ImageView
-                    android:id="@+id/address_icon"
+                    android:id="@+id/iv_address"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_centerVertical="true"
@@ -162,25 +163,110 @@
                     android:src="@drawable/ic_medical_location" />
 
                 <TextView
-                    android:id="@+id/address_tv"
+                    android:id="@+id/txt_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_toEndOf="@id/address_icon"
+                    android:layout_toEndOf="@id/iv_address"
                     android:text="Address"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/address_tv"
+                    android:layout_below="@id/txt_details"
                     android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_toEndOf="@id/address_icon"
+                    android:layout_toEndOf="@id/iv_address"
                     android:text="@string/profile_address" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_address"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_age"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:id="@+id/txt_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/iv_age"
+                    android:text="@string/hint_age"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_age"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_toEndOf="@id/iv_age"
+                    android:text="@string/hint_age" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_age"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_gender"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_profile" />
+
+                <TextView
+                    android:id="@+id/txt_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/iv_gender"
+                    android:text="@string/hint_gender"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_gender"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_toEndOf="@id/iv_gender"
+                    android:text="@string/hint_gender" />
 
 
             </RelativeLayout>
@@ -188,7 +274,7 @@
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="0.3dp"
-                android:layout_below="@id/address_layout"
+                android:layout_below="@id/layout_gender"
                 android:layout_marginStart="70dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="20dp"
@@ -196,7 +282,7 @@
 
 
             <Button
-                android:id="@+id/logout"
+                android:id="@+id/update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/divider"
@@ -204,7 +290,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="16dp"
                 android:padding="16dp"
-                android:text="@string/logout"
+                android:text="@string/update"
                 android:textColor="@android:color/white"
                 android:textAllCaps="false"
                 android:textSize="20sp"

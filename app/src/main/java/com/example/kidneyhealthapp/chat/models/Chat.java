@@ -2,28 +2,19 @@ package com.example.kidneyhealthapp.chat.models;
 
 public class Chat {
 
-    String chatId;
+    int chatId;
     String fromId;
     String userName;
-    String userImageUrl;
 
-    public Chat(String usrName, String fromId, String userImageUrl) {
-        this.userName = usrName;
-        this.fromId = fromId;
-        this.userImageUrl = userImageUrl;
-    }
-    public Chat(String usrName, String fromId) {
+    public Chat(int chatId , String usrName, String fromId) {
         this.userName = usrName;
         this.fromId = fromId;
     }
-    public Chat(String userId, String userName, String fromId, String userImageUrl) {
-        this.chatId = userId;
-        this.userName = userName;
-        this.fromId = fromId;
-        this.userImageUrl = userImageUrl;
+
+
+    public int getChatId() {
+        return chatId;
     }
-
-
 
     public String getUserName() {
         return userName;
@@ -31,14 +22,6 @@ public class Chat {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public String getChatId() {
-        return chatId;
-    }
-
-    public void setChatId(String chatId) {
-        this.chatId = chatId;
     }
 
     public String getFromId() {
@@ -49,11 +32,5 @@ public class Chat {
         this.fromId = fromId;
     }
 
-    public String getUserImageUrl() {
-        return userImageUrl;
-    }
 
-    public void setUserImageUrl(String userImageUrl) {
-        this.userImageUrl = userImageUrl;
-    }
 }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_item_center"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:padding="8dp"
+            android:src="@drawable/hospital"
+            android:contentDescription="img" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/image"
+            android:padding="8dp"
+            android:layout_weight="6">
+
+            <TextView
+                android:id="@+id/center_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="2dp"
+                android:text="@string/center_name"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/doctor_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/doctor_name"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/update_center"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:text="@string/update_center_"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:padding="8dp"
+                android:background="@drawable/bg_login_btn"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:src="@drawable/ic_delete"
+        app:tint="@color/input_login_hint" />
+</RelativeLayout>

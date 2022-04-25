@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <EditText
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hint_center_name"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:background="@drawable/bg_et_input"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"  />
+        <EditText
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hint_center_info"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:background="@drawable/bg_et_input"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"  />
+        <EditText
+            android:id="@+id/tv_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hint_center_location"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:background="@drawable/bg_et_input"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"  />
+
+        <EditText
+            android:id="@+id/tv_lat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hint_center_lat"
+            android:padding="10dp"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:background="@drawable/bg_et_input"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"  />
+
+        <EditText
+            android:id="@+id/tv_lon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hint_center_lon"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:background="@drawable/bg_et_input"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"
+            android:inputType="numberDecimal"
+            />
+        <Button
+            android:id="@+id/add_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:text="@string/add_center"
+            android:background="@drawable/bg_login_btn"
+            android:textAllCaps="false"
+
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

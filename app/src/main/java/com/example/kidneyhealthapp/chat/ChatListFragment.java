@@ -17,8 +17,8 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.kidneyhealthapp.R;
-import com.example.kidneyhealthapp.api.Urls;
-import com.example.kidneyhealthapp.chat.models.Chat;
+import com.example.kidneyhealthapp.utils.Urls;
+import com.example.kidneyhealthapp.model.Chat;
 import com.example.kidneyhealthapp.utils.SharedPrefManager;
 
 import org.json.JSONArray;
@@ -61,18 +61,18 @@ public class ChatListFragment extends Fragment {
 
         mChatsList = view.findViewById(R.id.chats_list);
 
-        chats = new ArrayList<Chat>()
-        {{
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-            add(new Chat("teacher1", "1"));
-
-        }};
+        chats = new ArrayList<Chat>();
+//        {{
+//            add(new Chat(1,"teacher1", "1"));
+//            add(new Chat(1,"teacher1", "1"));
+//            add(new Chat(1,"teacher1", "1"));
+//            add(new Chat(1,"teacher1", "1"));
+//            add(new Chat(1,"teacher1", "1"));
+//            add(new Chat(1,"teacher1", "1"));
+//            add(new Chat(1,"teacher1", "1"));
+//            add(new Chat(1,"teacher1", "1"));
+//
+//        }};
 
         chatListAdapter = new ChatListAdapter(getContext(), chats);
         mChatsList.setAdapter(chatListAdapter);
@@ -110,12 +110,13 @@ public class ChatListFragment extends Fragment {
                                 Chat chat;
                                 for (int i = 0; i < chatsArray.length(); i++){
                                     JSONObject chatJson = chatsArray.getJSONObject(i);
-                                    chat = new Chat(
-                                            chatJson.getString("from_name"),
-                                            chatJson.getString("from_id"),
-                                            null
-                                    );
-                                    chats.add(chat);
+//                                    chat = new Chat(
+//                                            Integer.parseInt(chatJson.getString("id")),
+//                                            chatJson.getString("from_name"),
+//                                            chatJson.getString("from_id")
+//
+//                                    );
+//                                    chats.add(chat);
                                 }
 
                                 if(chats.isEmpty()){

@@ -49,7 +49,7 @@ public class DoctorMain extends AppCompatActivity implements NavigationView.OnNa
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.menu_appointment_requests, R.id.menu_patients, R.id.menu_profile,R.id.menu_my_center).setOpenableLayout(drawerLayout).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder( R.id.menu_appointment_requests, R.id.menu_center_patients, R.id.menu_profile,R.id.menu_my_center, R.id.menu_chat_list).setOpenableLayout(drawerLayout).build();
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 
@@ -90,8 +90,8 @@ public class DoctorMain extends AppCompatActivity implements NavigationView.OnNa
             case R.id.menu_appointment_requests:
                 destination = R.id.menu_appointment_requests;
                 break;
-            case R.id.menu_patients:
-                destination = R.id.menu_patients;
+            case R.id.menu_center_patients:
+                destination = R.id.menu_center_patients;
                 break;
 
             case R.id.menu_profile:
@@ -101,6 +101,11 @@ public class DoctorMain extends AppCompatActivity implements NavigationView.OnNa
             case R.id.menu_my_center:
                 destination = R.id.menu_my_center;
                 break;
+
+            case R.id.menu_chat_list:
+                destination = R.id.menu_chat_list;
+                break;
+
             case R.id.menu_logout:
                 SharedPrefManager.getInstance(this).logout();
                 startActivity( new Intent(this, Login.class));

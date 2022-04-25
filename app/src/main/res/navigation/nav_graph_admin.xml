@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph_admin">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_admin"
+    app:startDestination="@id/menu_dialysis_centers"
+    >
+    <fragment
+        android:id="@+id/menu_dialysis_centers"
+        android:name="com.example.kidneyhealthapp.admin.fragments.ManageDialysisCentersFragment"
+        android:label="@string/manage_centers"
+        tools:layout="@layout/fragment_manage_dialysis_centers" >
+        <action
+            android:id="@+id/action_centers_to_centerDetailsFragment"
+            app:destination="@id/CenterDetailsFragment"
+            app:popUpTo="@id/menu_dialysis_centers"/>
+        <action
+            android:id="@+id/action_centers_to_updateCenterFragment"
+            app:destination="@id/UpdateCenterFragment"
+            app:popUpTo="@id/menu_dialysis_centers"/>
+        <action
+            android:id="@+id/action_centers_to_AddCenterFragment"
+            app:destination="@id/AddCenterFragment"
+            app:popUpTo="@id/menu_dialysis_centers"/>
+    </fragment>
 
+    <fragment
+        android:id="@+id/CenterDetailsFragment"
+        android:name="com.example.kidneyhealthapp.admin.fragments.CenterDetailsFragment"
+        android:label="@string/center_details"
+        tools:layout="@layout/fragment_center_details" />
+
+    <fragment
+        android:id="@+id/UpdateCenterFragment"
+        android:name="com.example.kidneyhealthapp.doctor.fragments.UpdateCenterFragment"
+        android:label="@string/update_center"
+        tools:layout="@layout/fragment_update_center" />
+    <fragment
+        android:id="@+id/AddCenterFragment"
+        android:name="com.example.kidneyhealthapp.admin.fragments.AddCenterFragment"
+        android:label="@string/add_center"
+        tools:layout="@layout/fragment_add_center" />
+
+
+    <fragment
+        android:id="@+id/menu_doctors"
+        android:name="com.example.kidneyhealthapp.admin.fragments.ManageDoctorsListFragment"
+        android:label="@string/manage_doctors"
+        tools:layout="@layout/fragment_manage_doctors_list" >
+        <action
+            android:id="@+id/action_doctors_to_doctorDetailsFragment"
+            app:destination="@id/DoctorDetailsFragment"
+            app:popUpTo="@id/menu_doctors"/>
+        <action
+            android:id="@+id/action_doctors_to_linkDoctorToCenterFragment"
+            app:destination="@id/LinkDoctorToCenterFragment"
+            app:popUpTo="@id/menu_doctors"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/DoctorDetailsFragment"
+        android:name="com.example.kidneyhealthapp.admin.fragments.DoctorDetailsFragment"
+        android:label="@string/doctor_details"
+        tools:layout="@layout/fragment_doctor_details" />
+
+    <fragment
+        android:id="@+id/LinkDoctorToCenterFragment"
+        android:name="com.example.kidneyhealthapp.admin.fragments.ChooseDialysisCenterFragment"
+        android:label="@string/dialysis_centers"
+        tools:layout="@layout/fragment_choose_dialysis_centers" />
+
+    <fragment
+        android:id="@+id/menu_patients"
+        android:name="com.example.kidneyhealthapp.admin.fragments.ManagePatientsListFragment"
+        android:label="@string/manage_patients"
+        tools:layout="@layout/fragment_manage_doctors_list" >
+        <action
+            android:id="@+id/action_patients_to_patientDetailsFragment"
+            app:destination="@id/PatientDetailsFragment"
+            app:popUpTo="@id/menu_patients"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/PatientDetailsFragment"
+        android:name="com.example.kidneyhealthapp.admin.fragments.PatientDetailsAdminFragment"
+        android:label="@string/patient_details"
+        tools:layout="@layout/fragment_patient_details_admin" />
 </navigation>

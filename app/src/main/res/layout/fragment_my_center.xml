@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
->
+    android:layoutDirection="ltr"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +36,7 @@
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <TextView
-                android:id="@+id/student_name"
+                android:id="@+id/center_name"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
@@ -44,24 +46,6 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".3">
-
-                <TextView
-                    android:id="@+id/location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_weight=".4"
-                    android:text="@string/center_location"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-
-            </RelativeLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -71,9 +55,117 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_location"
+                android:layout_width="match_parent"
+                android:layout_height="103dp"
+                android:layout_margin="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="@string/center_location"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/center_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:padding="10dp"
+                            android:text="@string/center_info"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="@string/center_lat"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/center_lat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:padding="10dp"
+                            android:text="@string/center_lat"
+                            android:textColor="@color/black"
+                        android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="@string/center_lon"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/center_lon"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:padding="10dp"
+                            android:text="@string/center_lon"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardName"
                 android:layout_width="match_parent"
-                android:layout_height="103dp">
+                android:layout_height="103dp"
+                android:layout_margin="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -95,10 +187,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:layout_marginEnd="6dp"
+                        android:padding="10dp"
                         android:text="@string/center_info"
                         android:textColor="@color/black"
                         android:textSize="15dp"
-                        android:padding="10dp"
                         android:textStyle="bold" />
 
 
@@ -106,17 +198,18 @@
             </androidx.cardview.widget.CardView>
 
             <Button
+                android:id="@+id/update_center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginStart="40dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="40dp"
-                android:textAllCaps="false"
-                android:text="@string/update_center"
                 android:background="@drawable/bg_login_btn"
-                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@string/update_center"
+                android:textAllCaps="false"
+                android:layout_marginBottom="10dp"
                 />
-
 
 
         </LinearLayout>
