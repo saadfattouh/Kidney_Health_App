@@ -10,12 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
@@ -27,17 +29,19 @@ import com.example.kidneyhealthapp.patient.adapters.DialysisCentersAdapter;
 import com.example.kidneyhealthapp.model.Center;
 import com.example.kidneyhealthapp.utils.GpsTracker;
 import com.example.kidneyhealthapp.utils.SharedPrefManager;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 
-public class DialysisCentersFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
+public class DialysisCentersFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     DialysisCentersAdapter mAdapter;
     ArrayList<Center> list;
     RecyclerView mList;
     SearchView mSearchView;
-    Button mViewNearest , mViewAll;
+    Button mViewNearest, mViewAll;
     Context context;
 
     SwipeRefreshLayout mSwipeRefreshLayout;
@@ -49,7 +53,8 @@ public class DialysisCentersFragment extends Fragment implements SwipeRefreshLay
         this.context = context;
     }
 
-    public DialysisCentersFragment() {}
+    public DialysisCentersFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -96,20 +101,29 @@ public class DialysisCentersFragment extends Fragment implements SwipeRefreshLay
             }
         });
 
-        mViewAll.setOnClickListener(v->{
-            mAdapter.getFilter().filter("" + ":" + Constants.SEARCH);
+        mViewAll.setOnClickListener(v -> {
+//            mAdapter.getFilter().filter("" + ":" + Constants.SEARCH);
+            mSwipeRefreshLayout.post(() -> {
+                mSwipeRefreshLayout.setRefreshing(true);
+                getCenters();
+            });
         });
-        mViewNearest.setOnClickListener(v->{
-            GpsTracker gpsTracker= new GpsTracker(getActivity().getApplicationContext());
-            Location location = gpsTracker.getLocation();
-            Log.e("location",location.getLatitude() + "   :  " +location.getLongitude());
+        mViewNearest.setOnClickListener(v -> {
+            GpsTracker gpsTracker = new GpsTracker(context);
 
-            while(location.getLatitude() == 0.0 | location.getLongitude() == 0.0){
-                location = gpsTracker.getLocation();
-                Log.e("gps tracker", location.getLatitude() + " : "+ gpsTracker.getLongitude());
+            Location location = gpsTracker.getLocation();
+            if (location == null) {
+                Toast.makeText(context, "Please enable gps", Toast.LENGTH_SHORT).show();
+            } else {
+                Log.e("location", location.getLatitude() + "   :  " + location.getLongitude());
+                while (location.getLatitude() == 0.0 | location.getLongitude() == 0.0) {
+                    location = gpsTracker.getLocation();
+                    Log.e("gps tracker", location.getLatitude() + " : " + gpsTracker.getLongitude());
+                }
+                SharedPrefManager.getInstance(context).setUserLocation(location.getLatitude(), location.getLongitude());
+                mAdapter.getFilter().filter("query" + ":" + Constants.NEAREST);
             }
-            SharedPrefManager.getInstance(context).setUserLocation(location.getLatitude(), location.getLongitude());
-            mAdapter.getFilter().filter("query" + ":"+Constants.NEAREST);
+
         });
     }
 
@@ -157,6 +171,7 @@ public class DialysisCentersFragment extends Fragment implements SwipeRefreshLay
                             Log.e("replies catch", e.getMessage());
                         }
                     }
+
                     @Override
                     public void onError(ANError error) {
                         mSwipeRefreshLayout.setRefreshing(false);
@@ -165,6 +180,7 @@ public class DialysisCentersFragment extends Fragment implements SwipeRefreshLay
                     }
                 });
     }
+
     @Override
     public void onRefresh() {
         getCenters();

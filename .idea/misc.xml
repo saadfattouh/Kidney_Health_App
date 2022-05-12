@@ -23,6 +23,7 @@
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_add_daily_info.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_appointment_requests.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_center_details.xml" value="0.2" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_center_patients.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_chatting.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_chatting_with_patients.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_choose_dialysis_centers.xml" value="0.1" />
@@ -37,6 +38,7 @@
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_manage_dialysis_centers.xml" value="0.11" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_manage_doctors_list.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_manage_patients_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_my_appointments.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_my_center.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_patient_details.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_patient_details_admin.xml" value="0.175" />

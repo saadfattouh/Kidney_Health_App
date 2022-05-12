@@ -23,9 +23,11 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.kidneyhealthapp.R;
 import com.example.kidneyhealthapp.admin.adapters.ChooseDialysisCenterAdapter;
 import com.example.kidneyhealthapp.model.Center;
+import com.example.kidneyhealthapp.utils.SharedPrefManager;
 import com.example.kidneyhealthapp.utils.Urls;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -135,6 +137,57 @@ public class ChooseDialysisCenterFragment extends Fragment implements ChooseDial
     }
 
     private void linkDoctorToCenter(String doctorId, String centerId) {
-        navController.popBackStack();
+        pDialog.show();
+        String url = Urls.LINK_DOCTOR_TO_CENTER;
+
+        AndroidNetworking.post(url)
+                .addBodyParameter("doctor_id", doctorId)
+                .addBodyParameter("center_id", centerId)
+                .setPriority(Priority.MEDIUM)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            //converting response to json object
+                            JSONObject obj = response;
+                            String message = obj.getString("message");
+                            String successMessage = "Updated";
+                            //if no error in response
+                            if (message.toLowerCase().contains(successMessage.toLowerCase())) {
+                                Toast.makeText(context, context.getResources().getString(R.string.doctor_linked_to), Toast.LENGTH_SHORT).show();
+                                navController.popBackStack();
+                            }else{
+                                Toast.makeText(context, context.getResources().getString(R.string.operation_error), Toast.LENGTH_SHORT).show();
+                            }
+                            pDialog.dismiss();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            pDialog.dismiss();
+                            Log.e("apply", e.getMessage());
+                        }
+                    }
+                    @Override
+                    public void onError(ANError anError) {
+                        pDialog.dismiss();
+                        Log.e("applyError", anError.getErrorBody());
+                        try {
+                            JSONObject error = new JSONObject(anError.getErrorBody());
+                            JSONObject data = error.getJSONObject("data");
+                            Toast.makeText(context, error.getString("message"), Toast.LENGTH_SHORT).show();
+                            if (data.has("patient_id")) {
+                                Toast.makeText(context, data.getJSONArray("patient_id").toString(), Toast.LENGTH_SHORT).show();
+                            }
+                            if (data.has("water")) {
+                                Toast.makeText(context, data.getJSONArray("water").toString(), Toast.LENGTH_SHORT).show();
+                            }
+                            if (data.has("medicine")) {
+                                Toast.makeText(context, data.getJSONArray("medicine").toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
     }
 }

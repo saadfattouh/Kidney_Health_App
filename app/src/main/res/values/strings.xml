@@ -123,6 +123,7 @@
     <string name="center_added">New center added successfully</string>
     <string name="patient_deleted_success">Patient account deleted successfully</string>
     <string name="center_deleted_success">Center deleted successfully</string>
+    <string name="doctor_linked_to">Doctor linked to center successfully</string>
 
 
 </resources>

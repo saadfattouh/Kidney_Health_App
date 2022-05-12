@@ -3,7 +3,8 @@ package com.example.kidneyhealthapp.utils;
 public class Urls {
 
     //MAIN REQUESTS
-    public static final String BASE_URL = "http://std.scit.co/kidney-health/public/api/";
+//    public static final String BASE_URL = "http://std.scit.co/kidney-health/public/api/";
+    public static final String BASE_URL = "http://192.168.43.130/std-kidney-health/public/api/";
     public static final String LOGIN = BASE_URL +"login";
     public static final String RESET_PASSWORD = BASE_URL + "";
     public static final String UPDATE_PATIENT_ACC = BASE_URL + "update_patient";
@@ -45,5 +46,6 @@ public class Urls {
     public static final String DELETE_PATIENT = BASE_URL + "delete_patient";
     public static final String ADD_CENTER = BASE_URL + "insert_center";
     public static final String GET_PATIENTS = BASE_URL + "get_patients";
+    public static final String LINK_DOCTOR_TO_CENTER = BASE_URL + "link_doctor_to_center";
 }
 

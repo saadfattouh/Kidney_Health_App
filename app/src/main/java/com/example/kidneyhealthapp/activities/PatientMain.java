@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.example.kidneyhealthapp.R;
@@ -20,10 +22,13 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class PatientMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener {
 
+    private static final int LOCATION_CODE = 101;
+    private static final int LOCATION_REQUEST = 100;
     public Toolbar toolbar;
 
     public DrawerLayout drawerLayout;
@@ -45,6 +50,10 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
         prefManager = SharedPrefManager.getInstance(this);
 
         setupNavigation();
+        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_CODE);
+        }
     }
 
     private void setupNavigation() {
@@ -148,5 +157,16 @@ public class PatientMain extends AppCompatActivity implements NavigationView.OnN
     @Override
     public void onDrawerStateChanged(int newState) {
 
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "GPS permission granted", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "GPS permission denied", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
