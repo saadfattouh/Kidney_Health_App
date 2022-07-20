@@ -3,8 +3,8 @@ package com.example.kidneyhealthapp.utils;
 public class Urls {
 
     //MAIN REQUESTS
-//    public static final String BASE_URL = "http://std.scit.co/kidney-health/public/api/";
-    public static final String BASE_URL = "http://192.168.43.130/std-kidney-health/public/api/";
+    public static final String BASE_URL = "http://std.scit.co/kidney-health/public/api/";
+//    public static final String BASE_URL = "http://192.168.43.130/std-kidney-health/public/api/";
     public static final String LOGIN = BASE_URL +"login";
     public static final String RESET_PASSWORD = BASE_URL + "";
     public static final String UPDATE_PATIENT_ACC = BASE_URL + "update_patient";

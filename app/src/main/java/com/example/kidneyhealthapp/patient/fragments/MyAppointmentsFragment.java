@@ -109,14 +109,15 @@ public class MyAppointmentsFragment extends Fragment implements SwipeRefreshLayo
                                 JSONArray jsonArray = jsonObject.getJSONArray("data");
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     JSONObject obj = jsonArray.getJSONObject(i);
+                                    JSONObject center  = obj.getJSONObject("center");
                                     list.add(
                                             new Appointment(
                                                     Integer.parseInt(obj.getString("id")),
                                                     "doctor_name",
-                                                    obj.getString("center_id"),
+                                                    center.getString("name"),
                                                     obj.getInt("patient_id"),
                                                     obj.getString("create_at").substring(0,10),
-                                                    Integer.parseInt("1"),
+                                                    Integer.parseInt(obj.getString("status")),
                                                     "result_info",
                                                     "patient_status"                                            )
                                     );

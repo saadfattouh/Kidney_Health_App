@@ -53,6 +53,11 @@ public class UpdateCenterFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(getArguments() != null){
+            center = (Center)getArguments().getSerializable("center");
+        }else{
+            center = SharedPrefManager.getInstance(context).getCenterData();
+        }
     }
 
     @Override
@@ -70,7 +75,6 @@ public class UpdateCenterFragment extends Fragment {
         locationET = view.findViewById(R.id.tv_location);
         latET = view.findViewById(R.id.tv_lat);
         lonET = view.findViewById(R.id.tv_lon);
-        center = SharedPrefManager.getInstance(context).getCenterData();
         nameET.setText(center.getName());
         infoET.setText(center.getInfo());
         locationET.setText(center.getLocation());

@@ -8,9 +8,9 @@
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_admin_main.xml" value="0.2" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_admin_main.xml.xml" value="0.2" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_doctor_main.xml" value="0.1" />
-        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_register.xml" value="0.2" />
-        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/activity_splash.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/dialog_add_instruction.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/dialog_approve_appointment.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/dialog_center_info.xml" value="0.2" />
@@ -20,7 +20,7 @@
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/dialog_my_appointment_info.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/dialog_reject_appointment.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_add_center.xml" value="0.175" />
-        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_add_daily_info.xml" value="0.1" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_add_daily_info.xml" value="0.2" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_appointment_requests.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_center_details.xml" value="0.2" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/fragment_center_patients.xml" value="0.1" />
@@ -49,7 +49,7 @@
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_admin_center.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_admin_doctor.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_admin_patient.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_appointment.xml" value="0.1" />
+        <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_appointment.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_appointment_request.xml" value="0.18" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_center.xml" value="0.1" />
         <entry key="..\:/Users/O_o/AndroidStudioProjects/Kidney_Health_App/app/src/main/res/layout/item_chat_list.xml" value="0.16" />

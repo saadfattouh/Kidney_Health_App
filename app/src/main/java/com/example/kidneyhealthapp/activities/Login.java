@@ -83,7 +83,9 @@ public class Login extends AppCompatActivity {
 
         if(email.equals("admin") && password.equals("12345")){
             SharedPrefManager.getInstance(this).adminLogin();
+            pDialog.dismiss();
          goToAdmin();
+         return;
         }
         AndroidNetworking.post(url)
                 .addBodyParameter("type", String.valueOf(selectedUserType))
